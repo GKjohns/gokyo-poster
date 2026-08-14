@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --color-paper: #faf8f4;
+  --color-ink: #1c1a17;
+  --color-inkmuted: #6b6459;
+  --color-seal: #a33b2e;
+  --color-hairline: #e5dfd4;
+
+  --font-display: "Iowan Old Style", "Palatino Nova", Palatino, Georgia, serif;
+  --font-kanji: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+}
+
+:root {
+  --ui-bg: var(--color-paper);
+  --ui-text: var(--color-ink);
+  --ui-text-muted: var(--color-inkmuted);
+  --ui-border: var(--color-hairline);
+  --ui-primary: var(--color-seal);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.font-display { font-family: var(--font-display); }
+.font-kanji { font-family: var(--font-kanji); }

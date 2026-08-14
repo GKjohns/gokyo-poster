@@ -15,11 +15,22 @@ The canonical example: **Tai Otoshi** feels like having a rock tied around your 
 - `index.html` — review page: every throw's image pair + analogy text side by side
 - `styles.html` / `batch.html` — the style bake-off and the 5-throw pilot that picked the config
 
-## Next
+## The site
 
-- Assemble the actual poster grid with hover interaction (image swaps throw → analogy)
+`site/` is the poster itself — a Nuxt 4 + Nuxt UI app (started from the official
+`nuxt-ui-templates/starter`): paper-white gallery page, five kyo sections, 40 cards.
+Hover a card and the throw crossfades into its analogy; click for the pair
+side-by-side with the mechanic, the analogy, and why it maps. Touch devices flip
+on first tap, open on second.
 
-## Build
+```
+cd site && npm install && npm run dev
+```
+
+- `npm run data` — re-merge `../data/*.json` into `app/assets/gokyo.json` after editing analogies
+- `npm run images` — regenerate 640/1024px webp derivatives in `public/img/` from `../images/` (skips existing; delete a webp to redo it)
+
+## Review pages (pre-site artifacts)
 
 ```
 node build.mjs && open index.html
