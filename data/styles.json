@@ -1,5 +1,10 @@
 {
   "note": "Candidate styles for the poster. Every image prompt = scene prompt + ', ' + style_prompt. One will be chosen and injected into all 80 images (40 throws + 40 analogies).",
+  "chosen": {
+    "style": "sumi-e",
+    "throw": { "model": "google/gemini-3.1-flash-image", "method": "reference-photo re-render: find a real photo of the technique, save to images/refs/{id}.jpg (gitignored), prompt = 'Re-draw this exact judo throw ({Name}) — keep the two athletes' precise body positions, grips, and the key blocking/sweeping action — as: ' + style_prompt", "out": "images/throws/{id}.png" },
+    "analogy": { "model": "openai/gpt-image-2", "method": "text-only: technique's image_prompt from data/group-N.json + ', ' + style_prompt; keep framing whimsical to avoid safety rejections, fall back to the google model if refused", "out": "images/analogies/{id}.png" }
+  },
   "test_subject": {
     "technique": "tai-otoshi",
     "throw_name_prompt": "The classic judo throw Tai Otoshi (体落, body drop), performed by two judoka in white judogi, drawn accurately as it appears in real competition and kodokan textbooks, captured at the decisive moment of the throw; clean side view, figures large in frame, no background detail",

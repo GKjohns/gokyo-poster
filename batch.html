@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gokyo Poster — Pilot Batch</title>
+<style>
+  :root { --bg: #faf8f4; --card: #fff; --ink: #1c1a17; --muted: #6b6459;
+    --accent: #a33b2e; --line: #e5dfd4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 -apple-system, "Segoe UI", sans-serif; padding: 2rem 1rem 5rem; }
+  main { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; max-width: 62ch; }
+  section { margin: 0 0 3rem; }
+  h2 { font-size: 1.25rem; margin: 0 0 .15rem; }
+  h2 .kanji { color: var(--muted); font-weight: 400; margin-left: .4rem; }
+  .english { color: var(--accent); font-size: .82rem; margin: 0 0 .9rem;
+    text-transform: uppercase; letter-spacing: .05em; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+  figure { margin: 0; background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: .82rem; color: var(--muted); padding: .55rem .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pilot Batch — Sumi-e</h1>
+  <p class="sub">Five throws in the chosen production config: throw re-rendered from a real reference photo (Gemini), analogy from the scene prompt (gpt-image-2), both in the sumi-e ink brush style. If these hold up, the remaining 35 run the same pipeline.</p>
+  <div id="sections"></div>
+</main>
+<script>
+const batch = [
+  { id: "deashi-harai", romaji: "Deashi Harai", kanji: "出足払", english: "Advancing Foot Sweep", analogy: "Stepping onto a runaway skateboard" },
+  { id: "osoto-gari", romaji: "Osoto Gari", kanji: "大外刈", english: "Major Outer Reap", analogy: "Chair legs swept mid-lean" },
+  { id: "seoi-nage", romaji: "Seoi Nage", kanji: "背負投", english: "Shoulder Throw", analogy: "Piggyback ride gone wrong" },
+  { id: "uchi-mata", romaji: "Uchi Mata", kanji: "内股", english: "Inner Thigh Throw", analogy: "Flipped by the rising barrier arm" },
+  { id: "tomoe-nage", romaji: "Tomoe Nage", kanji: "巴投", english: "Circle Throw", analogy: "The airplane game gone flying" }
+];
+document.getElementById("sections").innerHTML = batch.map(t => `
+  <section>
+    <h2>${t.romaji}<span class="kanji">${t.kanji}</span></h2>
+    <p class="english">${t.english}</p>
+    <div class="pair">
+      <figure><img src="images/throws/${t.id}.png" alt="${t.romaji} — the throw" loading="lazy"><figcaption>The throw</figcaption></figure>
+      <figure><img src="images/analogies/${t.id}.png" alt="${t.romaji} — analogy" loading="lazy"><figcaption>${t.analogy}</figcaption></figure>
+    </div>
+  </section>`).join("");
+</script>
+</body>
+</html>
