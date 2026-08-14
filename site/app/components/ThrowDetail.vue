@@ -18,7 +18,7 @@ const open = defineModel<boolean>('open', { default: false })
     <template #content>
       <div
         v-if="technique"
-        class="p-6 sm:p-8"
+        class="p-6 sm:p-8 max-h-[85vh] overflow-y-auto overscroll-contain"
       >
         <div class="flex items-baseline justify-between gap-4">
           <h2 class="font-display text-2xl text-ink">
@@ -34,7 +34,7 @@ const open = defineModel<boolean>('open', { default: false })
           <figure class="border border-hairline bg-white rounded-sm overflow-hidden">
             <img
               :src="`/img/throws/${technique.id}-lg.webp`"
-              :alt="`${technique.romaji} — the throw`"
+              :alt="`${technique.romaji}: the throw`"
               width="1024"
               height="1024"
               class="w-full h-auto"
