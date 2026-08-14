@@ -27,6 +27,9 @@
   .card { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; background: var(--card);
     border: 1px solid var(--line); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }
   @media (max-width: 640px) { .card { grid-template-columns: 1fr; } }
+  .imgs { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line); border-bottom: 1px solid var(--line); }
+  .imgs img { display: block; width: 100%; height: auto; background: var(--card); }
   .throw { padding: 1.1rem 1.25rem; position: relative; }
   .num { position: absolute; top: .9rem; right: 1rem; color: var(--muted); font-size: .8rem; }
   .throw h3 { margin: 0; font-size: 1.05rem; }
@@ -50,6 +53,10 @@
   <h2>Dai Ikkyo <span class="kanji">第一教</span></h2>
   
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/deashi-harai.png" alt="Deashi Harai — the throw" loading="lazy">
+    <img src="images/analogies/deashi-harai.png" alt="Deashi Harai — Stepping onto a runaway skateboard" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.1</div>
     <h3>Deashi Harai <span class="kanji">出足払</span></h3>
@@ -65,6 +72,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/hiza-guruma.png" alt="Hiza Guruma — the throw" loading="lazy">
+    <img src="images/analogies/hiza-guruma.png" alt="Hiza Guruma — Over the handlebars" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.2</div>
     <h3>Hiza Guruma <span class="kanji">膝車</span></h3>
@@ -80,6 +91,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/sasae-tsurikomi-ashi.png" alt="Sasae Tsurikomi Ashi — the throw" loading="lazy">
+    <img src="images/analogies/sasae-tsurikomi-ashi.png" alt="Sasae Tsurikomi Ashi — The classic classroom trip" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.3</div>
     <h3>Sasae Tsurikomi Ashi <span class="kanji">支釣込足</span></h3>
@@ -95,6 +110,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/uki-goshi.png" alt="Uki Goshi — the throw" loading="lazy">
+    <img src="images/analogies/uki-goshi.png" alt="Uki Goshi — Slung by the revolving door" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.4</div>
     <h3>Uki Goshi <span class="kanji">浮腰</span></h3>
@@ -110,6 +129,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/osoto-gari.png" alt="Osoto Gari — the throw" loading="lazy">
+    <img src="images/analogies/osoto-gari.png" alt="Osoto Gari — Chair legs swept mid-lean" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.5</div>
     <h3>Osoto Gari <span class="kanji">大外刈</span></h3>
@@ -125,6 +148,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/o-goshi.png" alt="O Goshi — the throw" loading="lazy">
+    <img src="images/analogies/o-goshi.png" alt="O Goshi — Dumped from a wheelbarrow" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.6</div>
     <h3>O Goshi <span class="kanji">大腰</span></h3>
@@ -140,6 +167,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/ouchi-gari.png" alt="Ouchi Gari — the throw" loading="lazy">
+    <img src="images/analogies/ouchi-gari.png" alt="Ouchi Gari — Hooked by the giant crook" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.7</div>
     <h3>Ouchi Gari <span class="kanji">大内刈</span></h3>
@@ -155,6 +186,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/seoi-nage.png" alt="Seoi Nage — the throw" loading="lazy">
+    <img src="images/analogies/seoi-nage.png" alt="Seoi Nage — Piggyback ride gone wrong" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">1.8</div>
     <h3>Seoi Nage <span class="kanji">背負投</span></h3>
@@ -174,6 +209,10 @@
   <h2>Dai Nikyo <span class="kanji">第二教</span></h2>
   
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/kosoto-gari.png" alt="Kosoto Gari — the throw" loading="lazy">
+    <img src="images/analogies/kosoto-gari.png" alt="Kosoto Gari — Slipping on the banana peel" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.1</div>
     <h3>Kosoto Gari <span class="kanji">小外刈</span></h3>
@@ -189,6 +228,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/kouchi-gari.png" alt="Kouchi Gari — the throw" loading="lazy">
+    <img src="images/analogies/kouchi-gari.png" alt="Kouchi Gari — The just-mopped floor slip" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.2</div>
     <h3>Kouchi Gari <span class="kanji">小内刈</span></h3>
@@ -204,6 +247,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/koshi-guruma.png" alt="Koshi Guruma — the throw" loading="lazy">
+    <img src="images/analogies/koshi-guruma.png" alt="Koshi Guruma — Flipping over the playground bar" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.3</div>
     <h3>Koshi Guruma <span class="kanji">腰車</span></h3>
@@ -219,6 +266,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/tsurikomi-goshi.png" alt="Tsurikomi Goshi — the throw" loading="lazy">
+    <img src="images/analogies/tsurikomi-goshi.png" alt="Tsurikomi Goshi — Bucket tipped over the well rim" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.4</div>
     <h3>Tsurikomi Goshi <span class="kanji">釣込腰</span></h3>
@@ -234,6 +285,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/okuri-ashi-harai.png" alt="Okuri Ashi Harai — the throw" loading="lazy">
+    <img src="images/analogies/okuri-ashi-harai.png" alt="Okuri Ashi Harai — Wave sweeps your feet seaward" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.5</div>
     <h3>Okuri Ashi Harai <span class="kanji">送足払</span></h3>
@@ -249,6 +304,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/tai-otoshi.png" alt="Tai Otoshi — the throw" loading="lazy">
+    <img src="images/analogies/tai-otoshi.png" alt="Tai Otoshi — Dog bolts at the low bench" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.6</div>
     <h3>Tai Otoshi <span class="kanji">体落</span></h3>
@@ -264,6 +323,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/harai-goshi.png" alt="Harai Goshi — the throw" loading="lazy">
+    <img src="images/analogies/harai-goshi.png" alt="Harai Goshi — Broom sweeps you over the wall" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.7</div>
     <h3>Harai Goshi <span class="kanji">払腰</span></h3>
@@ -279,6 +342,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/uchi-mata.png" alt="Uchi Mata — the throw" loading="lazy">
+    <img src="images/analogies/uchi-mata.png" alt="Uchi Mata — Flipped by the rising barrier arm" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">2.8</div>
     <h3>Uchi Mata <span class="kanji">内股</span></h3>
@@ -298,6 +365,10 @@
   <h2>Dai Sankyo <span class="kanji">第三教</span></h2>
   
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/kosoto-gake.png" alt="Kosoto Gake — the throw" loading="lazy">
+    <img src="images/analogies/kosoto-gake.png" alt="Kosoto Gake — Boot stuck in the mud" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.1</div>
     <h3>Kosoto Gake <span class="kanji">小外掛</span></h3>
@@ -313,6 +384,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/tsuri-goshi.png" alt="Tsuri Goshi — the throw" loading="lazy">
+    <img src="images/analogies/tsuri-goshi.png" alt="Tsuri Goshi — Hauling the big fish over the rail" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.2</div>
     <h3>Tsuri Goshi <span class="kanji">釣腰</span></h3>
@@ -328,6 +403,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/yoko-otoshi.png" alt="Yoko Otoshi — the throw" loading="lazy">
+    <img src="images/analogies/yoko-otoshi.png" alt="Yoko Otoshi — Dragged into the pool" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.3</div>
     <h3>Yoko Otoshi <span class="kanji">横落</span></h3>
@@ -343,6 +422,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/ashi-guruma.png" alt="Ashi Guruma — the throw" loading="lazy">
+    <img src="images/analogies/ashi-guruma.png" alt="Ashi Guruma — Flipping over the low chain fence" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.4</div>
     <h3>Ashi Guruma <span class="kanji">足車</span></h3>
@@ -358,6 +441,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/hane-goshi.png" alt="Hane Goshi — the throw" loading="lazy">
+    <img src="images/analogies/hane-goshi.png" alt="Hane Goshi — Launched off the seesaw" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.5</div>
     <h3>Hane Goshi <span class="kanji">跳腰</span></h3>
@@ -373,6 +460,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/harai-tsurikomi-ashi.png" alt="Harai Tsurikomi Ashi — the throw" loading="lazy">
+    <img src="images/analogies/harai-tsurikomi-ashi.png" alt="Harai Tsurikomi Ashi — Broom sweeps the marionette's feet" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.6</div>
     <h3>Harai Tsurikomi Ashi <span class="kanji">払釣込足</span></h3>
@@ -388,6 +479,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/tomoe-nage.png" alt="Tomoe Nage — the throw" loading="lazy">
+    <img src="images/analogies/tomoe-nage.png" alt="Tomoe Nage — The airplane game gone flying" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.7</div>
     <h3>Tomoe Nage <span class="kanji">巴投</span></h3>
@@ -403,6 +498,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/kata-guruma.png" alt="Kata Guruma — the throw" loading="lazy">
+    <img src="images/analogies/kata-guruma.png" alt="Kata Guruma — Farmer flips the grain sack" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">3.8</div>
     <h3>Kata Guruma <span class="kanji">肩車</span></h3>
@@ -422,6 +521,10 @@
   <h2>Dai Yonkyo <span class="kanji">第四教</span></h2>
   
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/sumi-gaeshi.png" alt="Sumi Gaeshi — the throw" loading="lazy">
+    <img src="images/analogies/sumi-gaeshi.png" alt="Sumi Gaeshi — The airplane game gone too far" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.1</div>
     <h3>Sumi Gaeshi <span class="kanji">隅返</span></h3>
@@ -437,6 +540,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/tani-otoshi.png" alt="Tani Otoshi — the throw" loading="lazy">
+    <img src="images/analogies/tani-otoshi.png" alt="Tani Otoshi — The crouching-friend playground prank" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.2</div>
     <h3>Tani Otoshi <span class="kanji">谷落</span></h3>
@@ -452,6 +559,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/hane-makikomi.png" alt="Hane Makikomi — the throw" loading="lazy">
+    <img src="images/analogies/hane-makikomi.png" alt="Hane Makikomi — Dough wrapped around a falling rolling pin" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.3</div>
     <h3>Hane Makikomi <span class="kanji">跳巻込</span></h3>
@@ -467,6 +578,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/sukui-nage.png" alt="Sukui Nage — the throw" loading="lazy">
+    <img src="images/analogies/sukui-nage.png" alt="Sukui Nage — Snow shovel under the snowman" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.4</div>
     <h3>Sukui Nage <span class="kanji">掬投</span></h3>
@@ -482,6 +597,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/utsuri-goshi.png" alt="Utsuri Goshi — the throw" loading="lazy">
+    <img src="images/analogies/utsuri-goshi.png" alt="Utsuri Goshi — Bounced over the backyard fence" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.5</div>
     <h3>Utsuri Goshi <span class="kanji">移腰</span></h3>
@@ -497,6 +616,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/o-guruma.png" alt="O Guruma — the throw" loading="lazy">
+    <img src="images/analogies/o-guruma.png" alt="O Guruma — Full speed into the turnstile" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.6</div>
     <h3>O Guruma <span class="kanji">大車</span></h3>
@@ -512,6 +635,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/soto-makikomi.png" alt="Soto Makikomi — the throw" loading="lazy">
+    <img src="images/analogies/soto-makikomi.png" alt="Soto Makikomi — Tetherball pole tipping mid-whip" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.7</div>
     <h3>Soto Makikomi <span class="kanji">外巻込</span></h3>
@@ -527,6 +654,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/uki-otoshi.png" alt="Uki Otoshi — the throw" loading="lazy">
+    <img src="images/analogies/uki-otoshi.png" alt="Uki Otoshi — The bull and the vanishing cape" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">4.8</div>
     <h3>Uki Otoshi <span class="kanji">浮落</span></h3>
@@ -546,6 +677,10 @@
   <h2>Dai Gokyo <span class="kanji">第五教</span></h2>
   
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/osoto-guruma.png" alt="Osoto Guruma — the throw" loading="lazy">
+    <img src="images/analogies/osoto-guruma.png" alt="Osoto Guruma — Backing over the garden fence" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.1</div>
     <h3>Osoto Guruma <span class="kanji">大外車</span></h3>
@@ -561,6 +696,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/uki-waza.png" alt="Uki Waza — the throw" loading="lazy">
+    <img src="images/analogies/uki-waza.png" alt="Uki Waza — Sprinter hits the tripwire" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.2</div>
     <h3>Uki Waza <span class="kanji">浮技</span></h3>
@@ -576,6 +715,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/yoko-wakare.png" alt="Yoko Wakare — the throw" loading="lazy">
+    <img src="images/analogies/yoko-wakare.png" alt="Yoko Wakare — The folding table collapses" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.3</div>
     <h3>Yoko Wakare <span class="kanji">横分</span></h3>
@@ -591,6 +734,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/yoko-guruma.png" alt="Yoko Guruma — the throw" loading="lazy">
+    <img src="images/analogies/yoko-guruma.png" alt="Yoko Guruma — Rolling over the fallen barrel" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.4</div>
     <h3>Yoko Guruma <span class="kanji">横車</span></h3>
@@ -606,6 +753,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/ushiro-goshi.png" alt="Ushiro Goshi — the throw" loading="lazy">
+    <img src="images/analogies/ushiro-goshi.png" alt="Ushiro Goshi — Bucked off the bull" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.5</div>
     <h3>Ushiro Goshi <span class="kanji">後腰</span></h3>
@@ -621,6 +772,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/ura-nage.png" alt="Ura Nage — the throw" loading="lazy">
+    <img src="images/analogies/ura-nage.png" alt="Ura Nage — The catapult lets fly" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.6</div>
     <h3>Ura Nage <span class="kanji">裏投</span></h3>
@@ -636,6 +791,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/sumi-otoshi.png" alt="Sumi Otoshi — the throw" loading="lazy">
+    <img src="images/analogies/sumi-otoshi.png" alt="Sumi Otoshi — Tipping the chair too far" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.7</div>
     <h3>Sumi Otoshi <span class="kanji">隅落</span></h3>
@@ -651,6 +810,10 @@
 </article>
 
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/yoko-gake.png" alt="Yoko Gake — the throw" loading="lazy">
+    <img src="images/analogies/yoko-gake.png" alt="Yoko Gake — The rug yanked flat out" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">5.8</div>
     <h3>Yoko Gake <span class="kanji">横掛</span></h3>

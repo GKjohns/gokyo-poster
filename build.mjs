@@ -14,6 +14,10 @@ const esc = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('
 
 const card = (t, n) => `
 <article class="card">
+  <div class="imgs">
+    <img src="images/throws/${t.id}.png" alt="${esc(t.romaji)} — the throw" loading="lazy">
+    <img src="images/analogies/${t.id}.png" alt="${esc(t.romaji)} — ${esc(t.analogy_name)}" loading="lazy">
+  </div>
   <div class="throw">
     <div class="num">${n}</div>
     <h3>${esc(t.romaji)} <span class="kanji">${esc(t.kanji)}</span></h3>
@@ -63,6 +67,9 @@ const html = `<!doctype html>
   .card { display: grid; grid-template-columns: 1fr 1.2fr; gap: 0; background: var(--card);
     border: 1px solid var(--line); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }
   @media (max-width: 640px) { .card { grid-template-columns: 1fr; } }
+  .imgs { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--line); border-bottom: 1px solid var(--line); }
+  .imgs img { display: block; width: 100%; height: auto; background: var(--card); }
   .throw { padding: 1.1rem 1.25rem; position: relative; }
   .num { position: absolute; top: .9rem; right: 1rem; color: var(--muted); font-size: .8rem; }
   .throw h3 { margin: 0; font-size: 1.05rem; }
