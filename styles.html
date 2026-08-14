@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gokyo Poster — Style Test</title>
+<title>Gokyo Poster — Style Test v2</title>
 <style>
   :root { --bg: #faf8f4; --card: #fff; --ink: #1c1a17; --muted: #6b6459;
     --accent: #a33b2e; --line: #e5dfd4; }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink);
     font: 16px/1.55 -apple-system, "Segoe UI", sans-serif; padding: 2rem 1rem 5rem; }
-  main { max-width: 1080px; margin: 0 auto; }
+  main { max-width: 1200px; margin: 0 auto; }
   h1 { font-size: 2rem; margin: 0 0 .25rem; }
-  .sub { color: var(--muted); margin: 0 0 2.5rem; max-width: 60ch; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; max-width: 68ch; }
   section { margin: 0 0 3.5rem; }
   h2 { font-size: 1.35rem; margin: 0 0 .1rem; border-bottom: 2px solid var(--accent);
     padding-bottom: .35rem; }
@@ -20,8 +20,8 @@
   .model-row { margin-bottom: 1.25rem; }
   .model-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em;
     color: var(--muted); margin: 0 0 .4rem; }
-  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  @media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }
+  .trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  @media (max-width: 800px) { .trio { grid-template-columns: 1fr; } }
   figure { margin: 0; background: var(--card); border: 1px solid var(--line);
     border-radius: 10px; overflow: hidden; }
   figure img { display: block; width: 100%; height: auto; }
@@ -30,8 +30,8 @@
 </head>
 <body>
 <main>
-  <h1>Style Test — Tai Otoshi</h1>
-  <p class="sub">One throw, six candidate styles, two image models. Left: the throw. Right: the analogy (roped to an anchor going over the cliff). Pick the style that should carry all 40 pairs.</p>
+  <h1>Style Test v2 — Tai Otoshi</h1>
+  <p class="sub">Round 2: throws are now generated two ways — <strong>name-only</strong> (just "Tai Otoshi", letting the model use its own knowledge of the technique) and <strong>from a real reference photo</strong> (re-rendered into the style). The analogy is the new one: the dog bolts after a squirrel just as your shins meet the park bench. Pick the style + throw approach that should carry all 40 pairs.</p>
   <div id="sections"></div>
 </main>
 <script>
@@ -44,6 +44,11 @@ const styles = [
   { id: "woodblock", name: "Minimal woodblock", blurb: "Flat muted ukiyo-e colors, visible paper grain, cream paper dominant." }
 ];
 const models = [["openai", "OpenAI"], ["google", "Google"]];
+const variants = [
+  ["throwname", "Throw — name only"],
+  ["throwref", "Throw — from reference photo"],
+  ["analogy", "Analogy — dog bolts at the bench"]
+];
 document.getElementById("sections").innerHTML = styles.map(s => `
   <section>
     <h2>${s.name}</h2>
@@ -51,9 +56,12 @@ document.getElementById("sections").innerHTML = styles.map(s => `
     ${models.map(([m, label]) => `
       <div class="model-row">
         <p class="model-label">${label}</p>
-        <div class="pair">
-          <figure><img src="images/style-test/${s.id}-throw-${m}.png" alt="${s.name} — throw (${label})" loading="lazy"><figcaption>Tai Otoshi — the throw</figcaption></figure>
-          <figure><img src="images/style-test/${s.id}-analogy-${m}.png" alt="${s.name} — analogy (${label})" loading="lazy"><figcaption>The analogy — anchor off the cliff</figcaption></figure>
+        <div class="trio">
+          ${variants.map(([v, cap]) => {
+            const c = v === "throwref" && m === "openai" ? cap + " (described — gateway can't feed images to gpt-image-2)" : cap;
+            return `
+          <figure><img src="images/style-test-v2/${s.id}-${v}-${m}.png" alt="${s.name} — ${c} (${label})" loading="lazy"><figcaption>${c}</figcaption></figure>`;
+          }).join("")}
         </div>
       </div>`).join("")}
   </section>`).join("");

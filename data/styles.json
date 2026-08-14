@@ -2,8 +2,9 @@
   "note": "Candidate styles for the poster. Every image prompt = scene prompt + ', ' + style_prompt. One will be chosen and injected into all 80 images (40 throws + 40 analogies).",
   "test_subject": {
     "technique": "tai-otoshi",
-    "throw_prompt": "A judo throw, Tai Otoshi (body drop), captured at the decisive moment: tori has spun in with his back turned to uke, right leg extended low as a bar across the front of uke's shins, hands hurling uke forward and down over the extended leg; uke is mid-air, pitching headlong over the leg, judogi and belt flying; both wear white judogi; clean side view, figures large in frame, no background detail",
-    "analogy_prompt": "A hiker roped around the waist to a heavy iron anchor that has just tumbled over a cliff edge, the taut rope dragging them forward, both shins caught against a low rock lip at the very edge while their upper body pitches forward over the drop, arms outstretched, dramatic side view along the cliff edge showing the anchor falling below the lip"
+    "throw_name_prompt": "The classic judo throw Tai Otoshi (体落, body drop), performed by two judoka in white judogi, drawn accurately as it appears in real competition and kodokan textbooks, captured at the decisive moment of the throw; clean side view, figures large in frame, no background detail",
+    "throw_ref_note": "Second variant: feed the model a real reference photo of Tai Otoshi and ask it to re-render the exact body positions in the target style. References kept out of git in images/refs/.",
+    "analogy_prompt": "A person walking a large happy dog past a knee-high park bench at the exact moment the dog bolts after a squirrel: the leash is stretched taut and hauling them forward and down, both shins caught against the bench edge, body pitching comically headlong over it with arms outstretched, the squirrel dashing away at the edge of the frame; side view showing the taut leash line and the bench as the low pivot"
   },
   "styles": [
     {
