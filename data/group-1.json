@@ -1,0 +1,69 @@
+{
+  "group": 1,
+  "techniques": [
+    {
+      "id": "deashi-harai",
+      "mechanic": "Just as uke's advancing foot is about to take weight, tori sweeps it sideways with the sole of his foot while his hands pull down and across. The support disappears at the exact moment it's needed, and uke's body keeps traveling with nothing under it.",
+      "analogy_name": "Stepping onto a runaway skateboard",
+      "analogy": "You stride confidently forward and your front foot lands on a skateboard you didn't see. The instant your weight commits, the board scoots your foot out ahead of you, and the rest of you drops flat where the foot used to be.",
+      "why_it_maps": "The advancing foot is carried away sideways at the precise moment of weight transfer, exactly like the timed sweep of deashi harai.",
+      "image_prompt": "A person mid-stride on a sidewalk whose front foot has just landed on a skateboard that is shooting out ahead of them; the foot is being carried away on the board while their body, arms windmilling, hangs in the air beginning to fall flat; the gap between the sliding foot and the falling body is the focus of the composition."
+    },
+    {
+      "id": "hiza-guruma",
+      "mechanic": "Tori places the sole of his foot against the side of uke's knee, fixing it in place, while his hands pull uke's upper body around and over. The stopped knee becomes the axle and uke's whole body wheels over it.",
+      "analogy_name": "Over the handlebars",
+      "analogy": "A kid on a bike rolls into a low curb. The front wheel stops dead, but the rider doesn't: the bike pivots over the jammed wheel and the kid sails clean over the handlebars.",
+      "why_it_maps": "A low fixed block (the knee, the stopped wheel) becomes a pivot while momentum above it keeps going, so the body rotates over the block like a wheel around its axle.",
+      "image_prompt": "A child on a bicycle whose front wheel has just slammed into a low concrete curb; the bike is tipping forward, rear wheel lifting off the ground, and the helmeted rider is mid-air arcing over the handlebars, body rotating around the stopped front wheel; side view showing the curb, the pivoting bike, and the flying rider in one arc."
+    },
+    {
+      "id": "sasae-tsurikomi-ashi",
+      "mechanic": "Tori props the front of uke's ankle with his foot, stopping the lower body cold, while his hands lift and pull the upper body forward. Feet stop, torso keeps going, and uke flips over the propped ankle.",
+      "analogy_name": "The classic classroom trip",
+      "analogy": "A kid hurries down the aisle between desks and another kid slides a sneaker out right in front of their ankle. The foot stops mid-stride; the rest of them doesn't. They pitch straight over the outstretched shoe, books sailing.",
+      "why_it_maps": "The outstretched foot propping the ankle is exactly tori's blocking foot: the base is arrested at floor level while momentum carries the upper body up and over it.",
+      "image_prompt": "A school classroom aisle where one seated kid has slid a sneakered foot out in front of a walking kid's ankle; the walker's foot is stopped dead against the shoe while their body pitches forward into a flat mid-air flip, books and papers flying from their arms; side view at desk height showing the propped ankle as the pivot."
+    },
+    {
+      "id": "uki-goshi",
+      "mechanic": "Tori slips his hip in front of uke's and, with an arm around the waist, twists. Uke doesn't get lifted so much as whirled around the hip, which acts as a post his body wraps around on the way to the floor.",
+      "analogy_name": "Slung by the revolving door",
+      "analogy": "You push into a revolving door in a hurry and lean into the bar. The door takes your push, spins on its axis, and whips you around with it — slinging you sideways out of the doorway before you can get a foot under you.",
+      "why_it_maps": "The door's central axis at hip height converts your straight-ahead push into a fast rotation around it, just as tori's inserted hip turns uke's forward pressure into a wrapping spin to the floor.",
+      "image_prompt": "A glass revolving door mid-spin with a person being whipped around inside it, hips pressed against the push bar, feet swinging off the ground as the rotation slings them sideways out of the door's opening; view from just outside the doorway catching the body mid-whirl around the central axis."
+    },
+    {
+      "id": "osoto-gari",
+      "mechanic": "Tori rocks uke's weight back onto one heel, then swings his own leg through like a scythe and reaps that supporting leg out from behind. With the weight already behind the base and the base suddenly gone, uke falls straight back.",
+      "analogy_name": "Chair legs swept mid-lean",
+      "analogy": "A kid tips his chair back onto its two rear legs, balancing at the edge. At that exact moment a broom sweeps the rear legs forward out from under him, and chair and kid crash flat onto their backs together.",
+      "why_it_maps": "Weight is first committed backward over a single narrow support, then that support is swept away in the same direction, dropping everything straight back.",
+      "image_prompt": "A kid leaning far back in a wooden chair balanced on its two rear legs, eyes wide, while a broom sweeps those rear chair legs forward out from underneath; chair and kid are caught at the beginning of a straight backward fall, feet and chair legs kicking up toward the ceiling."
+    },
+    {
+      "id": "o-goshi",
+      "mechanic": "Tori drops his hips below uke's center, wraps an arm around the waist, lifts uke onto his hips, and tips forward. Uke's body rolls over the hip like a load over an edge and lands in front.",
+      "analogy_name": "Dumped from a wheelbarrow",
+      "analogy": "A gardener wheels a friend along in a wheelbarrow, then lifts the handles high. The passenger pivots over the front lip and rolls out onto the grass in a heap while the barrow tips over its front wheel.",
+      "why_it_maps": "Lifting from behind rotates the whole load over a low fixed edge at hip height, exactly how tori's raised hips become the tipping point uke rolls over.",
+      "image_prompt": "A gardener tipping a wheelbarrow forward by lifting its handles high; a grinning passenger inside is rolling out over the front lip of the barrow, upside down mid-tumble toward a soft lawn, the wheelbarrow pivoted steeply over its single front wheel."
+    },
+    {
+      "id": "ouchi-gari",
+      "mechanic": "Tori steps in, hooks his leg around the inside of uke's leg, and reaps it out backward in the direction of uke's toes while driving the chest straight back. One support scooped from between the legs, uke sits down hard onto his back.",
+      "analogy_name": "Hooked by the giant crook",
+      "analogy": "A performer stands mid-bow when a giant shepherd's crook slides between their ankles, hooks one leg, and yanks it forward while a stagehand's palm nudges their chest. The leg shoots out and they plop straight down onto their back.",
+      "why_it_maps": "A hook pulls one support out from the inside while a push sends the body backward over the space where the leg used to be, the same two opposing forces as ouchi gari.",
+      "image_prompt": "A person on a stage with one leg being hooked and pulled forward at the ankle by a giant shepherd's crook reaching between their feet, while a hand pushes flat against their chest; they are tipping straight backward, arms flailing, one leg dragged up and forward by the hook."
+    },
+    {
+      "id": "seoi-nage",
+      "mechanic": "Tori turns his back into uke, pulls him tight so uke's weight loads onto his back, then bends and pitches him over the shoulder. Uke's own forward pressure gets redirected up, over, and down in front.",
+      "analogy_name": "Piggyback ride gone wrong",
+      "analogy": "A kid rides piggyback, arms wrapped over the carrier's shoulders. Then the carrier suddenly bends sharply forward — and the passenger keeps going, sailing over the shoulders and flipping onto the grass in front.",
+      "why_it_maps": "A load held tight against the back is rotated over the shoulder fulcrum by the sudden forward bend, exactly how uke, pulled onto tori's back, travels over the shoulder in seoi nage.",
+      "image_prompt": "A backyard scene where a piggyback carrier has bent sharply forward at the waist and the kid who was riding is flying over their shoulders — mid-air, upside down, about to land on the grass in front; side view emphasizing the arc from the carrier's back, over the shoulder, to the ground ahead."
+    }
+  ]
+}

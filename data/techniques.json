@@ -1,0 +1,85 @@
+{
+  "source": "Traditional Gokyo no Waza (五教の技) — the Kodokan's 1920 syllabus of 40 throwing techniques, organized in five groups (kyo) of eight.",
+  "groups": [
+    {
+      "id": 1,
+      "name": "Dai Ikkyo",
+      "kanji": "第一教",
+      "meaning": "First group",
+      "techniques": [
+        { "id": "deashi-harai", "romaji": "Deashi Harai", "kanji": "出足払", "english": "Advancing Foot Sweep" },
+        { "id": "hiza-guruma", "romaji": "Hiza Guruma", "kanji": "膝車", "english": "Knee Wheel" },
+        { "id": "sasae-tsurikomi-ashi", "romaji": "Sasae Tsurikomi Ashi", "kanji": "支釣込足", "english": "Propping Drawing Ankle" },
+        { "id": "uki-goshi", "romaji": "Uki Goshi", "kanji": "浮腰", "english": "Floating Hip" },
+        { "id": "osoto-gari", "romaji": "Osoto Gari", "kanji": "大外刈", "english": "Major Outer Reap" },
+        { "id": "o-goshi", "romaji": "O Goshi", "kanji": "大腰", "english": "Major Hip Throw" },
+        { "id": "ouchi-gari", "romaji": "Ouchi Gari", "kanji": "大内刈", "english": "Major Inner Reap" },
+        { "id": "seoi-nage", "romaji": "Seoi Nage", "kanji": "背負投", "english": "Shoulder Throw" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dai Nikyo",
+      "kanji": "第二教",
+      "meaning": "Second group",
+      "techniques": [
+        { "id": "kosoto-gari", "romaji": "Kosoto Gari", "kanji": "小外刈", "english": "Minor Outer Reap" },
+        { "id": "kouchi-gari", "romaji": "Kouchi Gari", "kanji": "小内刈", "english": "Minor Inner Reap" },
+        { "id": "koshi-guruma", "romaji": "Koshi Guruma", "kanji": "腰車", "english": "Hip Wheel" },
+        { "id": "tsurikomi-goshi", "romaji": "Tsurikomi Goshi", "kanji": "釣込腰", "english": "Lifting-Pulling Hip" },
+        { "id": "okuri-ashi-harai", "romaji": "Okuri Ashi Harai", "kanji": "送足払", "english": "Sliding Foot Sweep" },
+        { "id": "tai-otoshi", "romaji": "Tai Otoshi", "kanji": "体落", "english": "Body Drop" },
+        { "id": "harai-goshi", "romaji": "Harai Goshi", "kanji": "払腰", "english": "Sweeping Hip" },
+        { "id": "uchi-mata", "romaji": "Uchi Mata", "kanji": "内股", "english": "Inner Thigh Throw" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dai Sankyo",
+      "kanji": "第三教",
+      "meaning": "Third group",
+      "techniques": [
+        { "id": "kosoto-gake", "romaji": "Kosoto Gake", "kanji": "小外掛", "english": "Minor Outer Hook" },
+        { "id": "tsuri-goshi", "romaji": "Tsuri Goshi", "kanji": "釣腰", "english": "Lifting Hip" },
+        { "id": "yoko-otoshi", "romaji": "Yoko Otoshi", "kanji": "横落", "english": "Side Drop" },
+        { "id": "ashi-guruma", "romaji": "Ashi Guruma", "kanji": "足車", "english": "Leg Wheel" },
+        { "id": "hane-goshi", "romaji": "Hane Goshi", "kanji": "跳腰", "english": "Spring Hip" },
+        { "id": "harai-tsurikomi-ashi", "romaji": "Harai Tsurikomi Ashi", "kanji": "払釣込足", "english": "Sweeping Drawing Ankle" },
+        { "id": "tomoe-nage", "romaji": "Tomoe Nage", "kanji": "巴投", "english": "Circle Throw" },
+        { "id": "kata-guruma", "romaji": "Kata Guruma", "kanji": "肩車", "english": "Shoulder Wheel" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dai Yonkyo",
+      "kanji": "第四教",
+      "meaning": "Fourth group",
+      "techniques": [
+        { "id": "sumi-gaeshi", "romaji": "Sumi Gaeshi", "kanji": "隅返", "english": "Corner Reversal" },
+        { "id": "tani-otoshi", "romaji": "Tani Otoshi", "kanji": "谷落", "english": "Valley Drop" },
+        { "id": "hane-makikomi", "romaji": "Hane Makikomi", "kanji": "跳巻込", "english": "Springing Wraparound" },
+        { "id": "sukui-nage", "romaji": "Sukui Nage", "kanji": "掬投", "english": "Scooping Throw" },
+        { "id": "utsuri-goshi", "romaji": "Utsuri Goshi", "kanji": "移腰", "english": "Shifting Hip" },
+        { "id": "o-guruma", "romaji": "O Guruma", "kanji": "大車", "english": "Major Wheel" },
+        { "id": "soto-makikomi", "romaji": "Soto Makikomi", "kanji": "外巻込", "english": "Outer Wraparound" },
+        { "id": "uki-otoshi", "romaji": "Uki Otoshi", "kanji": "浮落", "english": "Floating Drop" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dai Gokyo",
+      "kanji": "第五教",
+      "meaning": "Fifth group",
+      "techniques": [
+        { "id": "osoto-guruma", "romaji": "Osoto Guruma", "kanji": "大外車", "english": "Major Outer Wheel" },
+        { "id": "uki-waza", "romaji": "Uki Waza", "kanji": "浮技", "english": "Floating Technique" },
+        { "id": "yoko-wakare", "romaji": "Yoko Wakare", "kanji": "横分", "english": "Side Separation" },
+        { "id": "yoko-guruma", "romaji": "Yoko Guruma", "kanji": "横車", "english": "Side Wheel" },
+        { "id": "ushiro-goshi", "romaji": "Ushiro Goshi", "kanji": "後腰", "english": "Rear Hip" },
+        { "id": "ura-nage", "romaji": "Ura Nage", "kanji": "裏投", "english": "Rear Throw" },
+        { "id": "sumi-otoshi", "romaji": "Sumi Otoshi", "kanji": "隅落", "english": "Corner Drop" },
+        { "id": "yoko-gake", "romaji": "Yoko Gake", "kanji": "横掛", "english": "Side Prop" }
+      ]
+    }
+  ]
+}
