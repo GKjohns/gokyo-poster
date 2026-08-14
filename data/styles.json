@@ -1,0 +1,46 @@
+{
+  "note": "Candidate styles for the poster. Every image prompt = scene prompt + ', ' + style_prompt. One will be chosen and injected into all 80 images (40 throws + 40 analogies).",
+  "test_subject": {
+    "technique": "tai-otoshi",
+    "throw_prompt": "A judo throw, Tai Otoshi (body drop), captured at the decisive moment: tori has spun in with his back turned to uke, right leg extended low as a bar across the front of uke's shins, hands hurling uke forward and down over the extended leg; uke is mid-air, pitching headlong over the leg, judogi and belt flying; both wear white judogi; clean side view, figures large in frame, no background detail",
+    "analogy_prompt": "A hiker roped around the waist to a heavy iron anchor that has just tumbled over a cliff edge, the taut rope dragging them forward, both shins caught against a low rock lip at the very edge while their upper body pitches forward over the drop, arms outstretched, dramatic side view along the cliff edge showing the anchor falling below the lip"
+  },
+  "styles": [
+    {
+      "id": "sumi-e",
+      "name": "Sumi-e ink brush",
+      "blurb": "A few confident brushstrokes, vast white paper, one red seal accent. The heritage pick.",
+      "style_prompt": "Japanese sumi-e ink wash painting: a few confident gestural black brushstrokes on plain white washi paper, subtle gray ink wash for shadow, one small red hanko-style seal mark as the only color, vast empty white space, no background, no text"
+    },
+    {
+      "id": "patent",
+      "name": "Patent diagram",
+      "blurb": "Fine engraved linework, hatching, force arrows on aged paper. Mechanics-forward.",
+      "style_prompt": "vintage patent-diagram technical illustration: precise fine black ink linework on slightly aged off-white paper, delicate cross-hatching for shading, thin arrows tracing the direction of force and rotation, flat side elevation like an engineering figure, mostly empty paper, no words or letters"
+    },
+    {
+      "id": "pencil",
+      "name": "Pencil sketch",
+      "blurb": "Loose graphite in a sketchbook, construction lines showing. Warm and human.",
+      "style_prompt": "loose graphite pencil sketch on white sketchbook paper: light construction lines still visible under confident contour lines, soft smudged shading, edges of the drawing fading unfinished into the white page, no text"
+    },
+    {
+      "id": "geometric",
+      "name": "Minimal geometric flat",
+      "blurb": "Flat shapes, black + warm red on white, motion arcs. Bauhaus poster spirit.",
+      "style_prompt": "minimal flat geometric illustration in a Bauhaus poster spirit: simple bold shapes in flat solid black, warm red, and one muted beige on a pure white background, no outlines, no gradients, a clean thin arc tracing the path of motion, generous white space, no text"
+    },
+    {
+      "id": "fineline",
+      "name": "Fine-line pen",
+      "blurb": "Single-weight thin ink line, sparse red accent. New Yorker spot-illustration energy.",
+      "style_prompt": "single-weight fine black pen line illustration like a New Yorker spot drawing: thin uniform ink line, minimal detail, one flat warm-red accent color applied sparingly, pure white background, elegant and lightly playful, generous white space, no text"
+    },
+    {
+      "id": "woodblock",
+      "name": "Minimal woodblock",
+      "blurb": "Flat muted ukiyo-e colors, visible paper grain, cream paper dominant.",
+      "style_prompt": "minimal Japanese woodblock print in ukiyo-e tradition: bold simplified black keyblock outlines, flat muted colors of indigo, ochre and faded vermilion, visible cream paper grain, composition dominated by empty cream-white paper, no text"
+    }
+  ]
+}
