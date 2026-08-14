@@ -11,7 +11,7 @@
     },
     {
       "id": "uki-waza",
-      "mechanic": "As uke drives forward into tori, tori simply drops to their own side and stretches one leg out as a low block in front of uke's advancing foot. Uke's own forward momentum, plus tori's pull, sends them sailing over it — tori never lifts anything.",
+      "mechanic": "As uke drives forward into tori, tori simply drops to their own side and stretches one leg out as a low block in front of uke's advancing foot. Uke's own forward momentum, plus tori's pull, sends them sailing over it. Tori never lifts anything.",
       "analogy_name": "Sprinter hits the tripwire",
       "analogy": "A kid is running flat-out across the yard when their shin catches a garden hose pulled taut just above the grass. The hose barely moves; the kid leaves the ground entirely, arms out, flying in a long flat arc while the person holding the hose has dropped to the ground to keep it low and tight.",
       "why_it_maps": "Uke supplies all the energy: forward momentum meeting a low anchored block at the ankle converts a run into flight, just as tori's sacrificed, dropped body anchors the leg-block that launches uke.",
@@ -21,7 +21,7 @@
       "id": "yoko-wakare",
       "mechanic": "Uke leans their weight into tori, and tori vanishes: dropping flat onto their side with both legs stretched across in front of uke's feet, while their grip yanks uke's upper body forward and down. Uke's support disappears and they pitch headlong over tori's lying body.",
       "analogy_name": "The folding table collapses",
-      "analogy": "Someone plants both hands on a folding table and leans their whole weight onto it. The legs snap shut, the tabletop drops flat to the floor — and it's now a low ledge right in front of their feet. With nothing holding them up and their hands still going down with the table, they pitch straight over it.",
+      "analogy": "Someone plants both hands on a folding table and leans their whole weight onto it. The legs snap shut, the tabletop drops flat to the floor, and it's now a low ledge right in front of their feet. With nothing holding them up and their hands still going down with the table, they pitch straight over it.",
       "why_it_maps": "The collapsing table is tori's sacrifice: the support uke leans on suddenly drops flat, becoming the very obstacle at their feet that their falling weight carries them over.",
       "image_prompt": "A person who was leaning with both hands on a folding table at the instant the table's legs collapse: the tabletop has dropped flat to the floor and the person is pitching headfirst over it, hands still following the fallen surface downward, feet peeling off the ground behind them. Side view showing the flattened table lying like a low ledge directly under their tipping body."
     },
@@ -29,13 +29,13 @@
       "id": "yoko-guruma",
       "mechanic": "When uke is bent forward over tori, tori throws a leg through, drops onto their own side, and uke's forward momentum carries them wheeling in a big circular arc over tori's fallen body, landing on their back beyond it. Tori's body on the ground is the axle of the wheel.",
       "analogy_name": "Rolling over the fallen barrel",
-      "analogy": "Stumbling forward, you run into a big barrel lying on its side right at your knees. It rolls as you hit it, your hips ride up over the curve, and you wheel through one full arc over the top — landing flat on your back on the far side.",
+      "analogy": "Stumbling forward, you run into a big barrel lying on its side right at your knees. It rolls as you hit it, your hips ride up over the curve, and you wheel through one full arc over the top, landing flat on your back on the far side.",
       "why_it_maps": "The lying barrel is tori's dropped body: a round axle on the ground that catches a forward-committed mass and turns its momentum into one big circular throw over the pivot.",
       "image_prompt": "A person cartwheeling over a large wooden barrel lying on its side: their hips ride the top of the curve, body inverted at the peak of the arc, hands reaching for the ground on the far side while the barrel rolls slightly beneath them. Side view with the barrel as the clear round center of the rotation."
     },
     {
       "id": "ushiro-goshi",
-      "mechanic": "As uke turns in for a hip throw, tori sinks low behind them, hugs their waist, and heaves them straight up off the floor on tori's hips — then tilts and pulls the platform away so uke drops flat onto their back.",
+      "mechanic": "As uke turns in for a hip throw, tori sinks low behind them, hugs their waist, and heaves them straight up off the floor on tori's hips, then tilts and pulls the platform away so uke drops flat onto their back.",
       "analogy_name": "Bucked off the bull",
       "analogy": "A rodeo bull heaves its back skyward and the rider pops clean off the saddle, weightless for a heartbeat with nothing under them. The bull is already somewhere else; all that's left is the drop, flat onto their back in the dirt.",
       "why_it_maps": "The bull is tori's hips: a living platform that hurls the rider vertically and then moves out from underneath, so the fall is pure gravity onto the flat of the back.",
@@ -43,26 +43,26 @@
     },
     {
       "id": "ura-nage",
-      "mechanic": "Tori clamps uke's torso in a bear hug, drives their own hips under, and arches backward like a drawn bow — hurling uke up and over tori's shoulder to land behind him. Tori sacrifices his own back to turn his whole arching body into a launcher.",
+      "mechanic": "Tori clamps uke's torso in a bear hug, drives their own hips under, and arches backward like a drawn bow, hurling uke up and over tori's shoulder to land behind him. Tori sacrifices his own back to turn his whole arching body into a launcher.",
       "analogy_name": "The catapult lets fly",
-      "analogy": "A catapult's arm whips up and back, and the pumpkin in its cradle is slung high overhead, sailing in a steep arc to smash down behind the machine. The frame slams itself backward to its stop — the payload keeps going.",
+      "analogy": "A catapult's arm whips up and back, and the pumpkin in its cradle is slung high overhead, sailing in a steep arc to smash down behind the machine. The frame slams itself backward to its stop; the payload keeps going.",
       "why_it_maps": "Tori's arching body is the catapult arm rotating about its base: the clamped payload is accelerated up and over the top of the arc and released to fall behind the thrower.",
       "image_prompt": "A wooden catapult at full release: its throwing arm slammed back against the frame while a large pumpkin sails high overhead in a steep arc, headed for the ground behind the machine. Side view capturing the whole flight path, the arm's rotation and the payload at the top of its arc directly above and slightly behind the catapult."
     },
     {
       "id": "sumi-otoshi",
-      "mechanic": "The famous 'air throw' — no leg contact at all. The instant uke's weight settles onto a rear heel, tori drives their hands down toward that unsupported back corner, pushing uke's balance past the edge of their base. Gravity does the rest.",
+      "mechanic": "The famous 'air throw': no leg contact at all. The instant uke's weight settles onto a rear heel, tori drives their hands down toward that unsupported back corner, pushing uke's balance past the edge of their base. Gravity does the rest.",
       "analogy_name": "Tipping the chair too far",
-      "analogy": "A kid rocks their chair back onto its two rear legs, then one inch too far. There's a frozen instant where the chair is past the balance point — nothing is touching them, nothing pushed hard, but nothing on earth can bring them back. Over they go, backward into the corner.",
-      "why_it_maps": "The chair's rear legs are uke's rear heel: once the center of gravity drifts past that corner of the base, the fall is inevitable without any sweep, hook, or lift — balance alone was the weapon.",
+      "analogy": "A kid rocks their chair back onto its two rear legs, then one inch too far. There's a frozen instant where the chair is past the balance point: nothing is touching them, nothing pushed hard, but nothing on earth can bring them back. Over they go, backward into the corner.",
+      "why_it_maps": "The chair's rear legs are uke's rear heel: once the center of gravity drifts past that corner of the base, the fall is inevitable without any sweep, hook, or lift; balance alone was the weapon.",
       "image_prompt": "A person in a chair tipped backward past its balance point, the chair up on its two rear legs and leaning beyond recovery, the sitter's arms windmilling and feet lifting off the floor as they begin the irreversible fall toward the back corner. Side view at seat height, with the empty space behind the chair emphasizing that nothing is catching them."
     },
     {
       "id": "yoko-gake",
       "mechanic": "Tori sweeps the side of uke's ankle with the sole of the foot while throwing their own body to the mat, dragging uke sideways. Uke's feet whip out from under them laterally and they land flat on their side.",
       "analogy_name": "The rug yanked flat out",
-      "analogy": "Someone standing on a rug when it's ripped sideways with full force — their feet shoot one way, and with nothing left under them they drop flat on their side where they stood. The person pulling the rug has thrown their whole body backward to the floor to get it out fast enough.",
-      "why_it_maps": "The rug is tori's sweeping foot removing uke's support sideways at floor level, and the puller falling backward with the rug is tori's sacrifice — total commitment of body weight to whip the feet away.",
+      "analogy": "Someone standing on a rug when it's ripped sideways with full force: their feet shoot one way, and with nothing left under them they drop flat on their side where they stood. The person pulling the rug has thrown their whole body backward to the floor to get it out fast enough.",
+      "why_it_maps": "The rug is tori's sweeping foot removing uke's support sideways at floor level, and the puller falling backward with the rug is tori's sacrifice: total commitment of body weight to whip the feet away.",
       "image_prompt": "A person suspended horizontally in midair an instant after a rug was yanked from under them: feet flung sideways off the escaping rug, body flat and parallel to the floor, about to land on their side. Nearby, the rug-puller has thrown themselves backward onto the floor, rug clutched to their chest. Side view at floor level showing both the airborne faller and the fallen puller committed to the pull."
     }
   ]

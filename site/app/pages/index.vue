@@ -24,7 +24,7 @@ function openDetail(t: Technique) {
         Gokyo no Waza
       </h1>
       <p class="mt-3 text-sm text-inkmuted max-w-md mx-auto">
-        The forty throws of Kodokan judo — and the everyday physics that explain them.
+        The forty throws of Kodokan judo, and the everyday physics that explain them.
       </p>
       <div
         class="mx-auto mt-8 h-1.5 w-1.5 rounded-full bg-seal"
@@ -32,7 +32,7 @@ function openDetail(t: Technique) {
       />
       <p class="mt-8 text-xs uppercase tracking-widest text-inkmuted">
         <span class="hidden [@media(hover:hover)]:inline">Hover a throw to see how it feels</span>
-        <span class="inline [@media(hover:hover)]:hidden">Tap a throw to see how it feels — tap again for the story</span>
+        <span class="inline [@media(hover:hover)]:hidden">Tap a throw to see how it feels. Tap again for the story</span>
       </p>
     </header>
 

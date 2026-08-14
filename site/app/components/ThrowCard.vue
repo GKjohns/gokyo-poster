@@ -33,7 +33,7 @@ function onClick() {
   <button
     type="button"
     class="group block w-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-seal/60 rounded-sm"
-    :aria-label="`${technique.romaji} — open details`"
+    :aria-label="`${technique.romaji}: open details`"
     @click="onClick"
   >
     <div
@@ -42,7 +42,7 @@ function onClick() {
     >
       <img
         :src="`/img/throws/${technique.id}.webp`"
-        :alt="`${technique.romaji} — the throw`"
+        :alt="`${technique.romaji}: the throw`"
         loading="lazy"
         width="640"
         height="640"
