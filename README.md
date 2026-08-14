@@ -7,14 +7,17 @@ The canonical example: **Tai Otoshi** feels like having a rock tied around your 
 ## Current state
 
 - `data/techniques.json` — canonical list of all 40 techniques (romaji, kanji, English, group)
-- `data/group-{1..5}.json` — per-group analogies: mechanic, analogy scene, why it maps, and an image-prompt seed for later generation
+- `data/group-{1..5}.json` — per-group analogies: mechanic, analogy scene, why it maps, and the image prompt
+- `data/styles.json` — the style bake-off candidates and the chosen production config (sumi-e; Gemini+reference for throws, gpt-image-2 for analogies)
+- `images/throws/`, `images/analogies/` — the generated pairs, one per technique
+- `scripts/` — generation tooling (see **[GENERATING.md](GENERATING.md)** for the full methodology: models, endpoints, reference-photo sourcing, safety workarounds, costs)
 - `build.mjs` — merges the data and generates `index.html`
-- `index.html` — review page showing each throw side by side with its analogy
+- `index.html` — review page: every throw's image pair + analogy text side by side
+- `styles.html` / `batch.html` — the style bake-off and the 5-throw pilot that picked the config
 
 ## Next
 
-- Generate the throw images and the analogy images (style TBD)
-- Assemble the actual poster grid with hover interaction
+- Assemble the actual poster grid with hover interaction (image swaps throw → analogy)
 
 ## Build
 
