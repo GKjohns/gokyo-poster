@@ -3,3 +3,5 @@
 node_modules/
 .DS_Store
 images/refs/
+internal_docs/**/source.mov
+internal_docs/**/candidates/

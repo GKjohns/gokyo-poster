@@ -35,7 +35,21 @@ node scripts/generate.mjs <model> <outPath> [--ref <imagePath>] <prompt...>
 # Skips existing outputs, retries once, concurrency 4.
 # Requires images/refs/{id}.jpg to exist for each id.
 AI_GATEWAY_API_KEY=... node scripts/batch.mjs <id> [<id> ...]
+
+# candidate rounds for review: roll N variants per manifest entry into a review folder
+node scripts/candidates.mjs <manifest.json> <outDir> [--n 3] [--only id,id] [--dry-run]
+# build the side-by-side review page (current image + candidates, radio picks -> JSON)
+node scripts/candidates-page.mjs <feedbackDir> [manifest.json ...] [--only id,id] [--out file.html] [--label-prefix r2-]
+# promote picks: copy PNGs into images/, write prompts (+ new concept text) into data/group-N.json,
+# copy the throw ref used, delete stale webps
+node scripts/promote.mjs <feedbackDir> <picks.json>
 ```
+
+The candidate flow (used for the 2026-08-15 review round, see
+`internal_docs/20260815_kyle_video_feedback/`): manifest of `{id, kind, label,
+prompt, ref?, n}` -> `candidates.mjs` -> an agent views every render and deletes
+failures -> `candidates-page.mjs` -> Kyle picks -> `promote.mjs` -> `cd src && npm run
+images && npm run data && cd .. && node build.mjs`.
 
 To **redo one image**, delete it and rerun `batch.mjs` with that id (it skips
 whatever exists). To redo with a tweaked scene, edit the `image_prompt` in the
@@ -89,6 +103,33 @@ reference is usually the problem — hunt a better one. Specifically: when Gemin
 keeps merging the two athletes into one mass, the reference is a compact,
 entangled illustration — drop the reference entirely and generate from a
 precise positional text description instead (fixed yoko-otoshi and yoko-gake).
+
+### Lessons from the 2026-08-15 review round
+
+- **No brooms.** Three analogies that used a broom as the sweeping agent were all
+  rejected ("a broom wouldn't be sweeping a person's leg"). Prefer devices with a
+  real-life reason to be there.
+- **State direction and contact explicitly, twice.** The recurring render bug was
+  physically-wrong direction: water pouring the wrong way, kid flying forward
+  instead of back, barrier arm at the groin, shins already past the pivot. Prompts
+  that name the direction (BACKWARD over the head), the contact point (shins
+  pressed against the chain), and the body orientation (belly-down, facing the
+  parent) fixed these; prompts that merely described the mechanic did not.
+- **Some devices always render wrong.** A barrier arm "under one inner thigh"
+  rendered at the crotch 5/5 times in side view; swap the concept rather than
+  re-roll.
+- **Text-only throws.** `yoko-gake` is generated text-only (every reference merged
+  or tangled). Prompt: "The judo sacrifice throw Yoko Gake (side hook), two judoka
+  in white judogi, clean side view, figures large in frame: tori has thrown himself
+  down onto his own side on the mat while the sole of his foot hooks and sweeps the
+  outside of uke's ankle; uke is airborne, body horizontal, about to land flat on
+  his side beside tori; tori's hands still grip uke's sleeve and lapel, pulling him
+  down; two complete, distinct figures with correct anatomy, drawn accurately as
+  in Kodokan textbooks, as: {style_prompt}". `batch.mjs` will refuse it for lack of
+  a ref; use `generate.mjs` directly.
+- **Reference quality is the throw.** tai-otoshi and tani-otoshi both failed on
+  refs that were front-on or from behind; a side-view competition photo fixed
+  each on the first roll.
 
 ## Costs (observed)
 
