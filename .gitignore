@@ -5,3 +5,4 @@ node_modules/
 images/refs/
 internal_docs/**/source.mov
 internal_docs/**/candidates/
+.vercel
