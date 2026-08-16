@@ -36,10 +36,10 @@
     {
       "id": "osoto-gari",
       "mechanic": "Tori rocks uke's weight back onto one heel, then swings his own leg through like a scythe and reaps that supporting leg out from behind. With the weight already behind the base and the base suddenly gone, uke falls straight back.",
-      "analogy_name": "Chair legs swept mid-lean",
-      "analogy": "A kid tips his chair back onto its two rear legs, balancing at the edge. At that exact moment a broom sweeps the rear legs forward out from under him, and chair and kid crash flat onto their backs together.",
-      "why_it_maps": "Weight is first committed backward over a single narrow support, then that support is swept away in the same direction, dropping everything straight back.",
-      "image_prompt": "A kid leaning far back in a wooden chair balanced on its two rear legs, eyes wide, while a broom sweeps those rear chair legs forward out from underneath; chair and kid are caught at the beginning of a straight backward fall, feet and chair legs kicking up toward the ceiling."
+      "analogy_name": "The sled leaves without you",
+      "analogy": "You plant one boot on a sled parked at the top of a hill and lean back to shout at your friends. The sled sets off downhill behind you and takes that boot with it. Your foot goes one way, backward and up, and the rest of you goes down flat in the snow.",
+      "why_it_maps": "Your weight is already committed backward over one foot, and then that foot is carried away backward under you, which is exactly the direction osoto gari reaps the supporting leg.",
+      "image_prompt": "Side view of a snowy hillside, one frozen instant, whimsical cartoon drawing: a laughing child faces uphill and leans far BACKWARD, one boot planted flat on a wooden sled behind them and the other foot already lifted clear of the snow; the sled has started sliding DOWNHILL and BACKWARD away behind the child, carrying that planted boot with it so the leg is dragged backward and upward and is now higher than the child's hips; the child's shoulders and head are dropping BACKWARD and DOWN in that same downhill direction, back about to slap flat onto the snow, arms windmilling, scarf and knitted hat flying; the boot never leaves the sled, and sled and falling body travel the same way, backward down the slope; loose powder sprays backward along the sled's path; comic cartoon peril, delighted face, nobody hurt; low side-on view so the escaping sled and the flat backward fall read in one line. The sled, the boot planted on it, and the child's falling head and shoulders all travel in the SAME direction, downhill; the child's back lands on the downhill side toward the sled, never uphill away from it, and there is no forward slip in the opposite direction."
     },
     {
       "id": "o-goshi",
@@ -47,7 +47,7 @@
       "analogy_name": "Dumped from a wheelbarrow",
       "analogy": "A gardener wheels a friend along in a wheelbarrow, then lifts the handles high. The passenger pivots over the front lip and rolls out onto the grass in a heap while the barrow tips over its front wheel.",
       "why_it_maps": "Lifting from behind rotates the whole load over a low fixed edge at hip height, exactly how tori's raised hips become the tipping point uke rolls over.",
-      "image_prompt": "A gardener tipping a wheelbarrow forward by lifting its handles high; a grinning passenger inside is rolling out over the front lip of the barrow, upside down mid-tumble toward a soft lawn, the wheelbarrow pivoted steeply over its single front wheel."
+      "image_prompt": "Side view of a garden lawn, one frozen instant, whimsical cartoon drawing: a grinning gardener tips a wheelbarrow forward by lifting both handles high, the barrow pivoted steeply over its single front wheel; the laughing passenger inside is rolling out over the FRONT LIP of the barrow as one whole, untwisted body with head, chest and hips all facing the SAME direction and the spine curved in a single smooth forward roll: head down first toward the grass beyond the lip, chest following, hips passing over the lip last, both legs together trailing up behind in the same rotation, both arms reaching forward toward the lawn; correct anatomy throughout, one continuous body, no twist at the waist, no limb facing the wrong way, the passenger clearly separate from the barrow; the front lip of the wheelbarrow is the fixed edge the whole body rotates over; comic cartoon peril, both faces delighted, nobody hurt; side-on composition at barrow height."
     },
     {
       "id": "ouchi-gari",
@@ -63,7 +63,7 @@
       "analogy_name": "Piggyback ride gone wrong",
       "analogy": "A kid rides piggyback, arms wrapped over the carrier's shoulders. Then the carrier suddenly bends sharply forward, and the passenger keeps going, sailing over the shoulders and flipping onto the grass in front.",
       "why_it_maps": "A load held tight against the back is rotated over the shoulder fulcrum by the sudden forward bend, exactly how uke, pulled onto tori's back, travels over the shoulder in seoi nage.",
-      "image_prompt": "A backyard scene where a piggyback carrier has bent sharply forward at the waist and the kid who was riding is flying over their shoulders — mid-air, upside down, about to land on the grass in front; side view emphasizing the arc from the carrier's back, over the shoulder, to the ground ahead."
+      "image_prompt": "Side view of a backyard lawn, one frozen instant, whimsical cartoon drawing: a piggyback carrier has bent sharply FORWARD at the waist and the child who was riding is only JUST PAST the carrier's shoulder, very close and still within arm's reach, the child's hip level with the carrier's ear and one of the child's hands still brushing the carrier's shoulder; the child is tipping head-down in a short, tight arc that will put them on the grass immediately in FRONT of the carrier's feet, a single step away, not sailing across the yard; the carrier's shoulder is the pivot and the whole arc is small and close, with almost no gap between the two figures; both faces laughing; comic cartoon peril, nobody hurt; side-on composition emphasizing how near the child is to the carrier's shoulder. The child goes over the TOP of the carrier's shoulder and comes down in FRONT of the carrier's face, on the side the carrier is facing; the child never slides off the carrier's back and is never behind the carrier."
     }
   ]
 }
