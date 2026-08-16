@@ -15,6 +15,6 @@ const groups = base.groups.map((group) => {
   return { ...group, techniques: group.techniques.map(t => ({ ...t, ...byId[t.id] })) }
 })
 
-const out = join(root, 'site/app/assets/gokyo.json')
+const out = join(root, 'src/app/assets/gokyo.json')
 writeFileSync(out, JSON.stringify({ groups }, null, 2))
 console.log(`wrote ${out} — ${groups.reduce((n, g) => n + g.techniques.length, 0)} techniques`)
