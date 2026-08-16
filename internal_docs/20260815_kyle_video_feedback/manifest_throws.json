@@ -1,0 +1,33 @@
+[
+  {
+    "id": "tai-otoshi",
+    "kind": "throw",
+    "label": "v2",
+    "ref": "images/refs/tai-otoshi-v2.jpg",
+    "n": 3,
+    "prompt": "Re-draw this exact judo throw (Tai Otoshi) — keep the two athletes' precise body positions, grips, and the key blocking/sweeping action — as:"
+  },
+  {
+    "id": "tai-otoshi",
+    "kind": "throw",
+    "label": "v3",
+    "ref": "images/refs/tai-otoshi-v3.jpg",
+    "n": 3,
+    "prompt": "Re-draw this exact judo throw (Tai Otoshi) — keep the two athletes' precise body positions, grips, and the key blocking/sweeping action — as:"
+  },
+  {
+    "id": "tani-otoshi",
+    "kind": "throw",
+    "label": "v2",
+    "ref": "images/refs/tani-otoshi-v2.jpg",
+    "n": 6,
+    "prompt": "Re-draw this exact judo throw (Tani Otoshi) — keep the two athletes' precise body positions, grips, and the key blocking/sweeping action — as:"
+  },
+  {
+    "id": "yoko-gake",
+    "kind": "throw",
+    "label": "text",
+    "n": 7,
+    "prompt": "The judo sacrifice throw Yoko Gake (side hook), two judoka in white judogi, clean side view, figures large in frame: tori has thrown himself down onto his own side on the mat while the sole of his foot hooks and sweeps the outside of uke's ankle; uke is airborne, body horizontal, about to land flat on his side beside tori; tori's hands still grip uke's sleeve and lapel, pulling him down; two complete, distinct figures with correct anatomy, drawn accurately as in Kodokan textbooks, as:"
+  }
+]
