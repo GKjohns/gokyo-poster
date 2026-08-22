@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gentle Way tile — clipart options</title>
+<style>
+  :root { --ink:#0b1220; --muted:#5a6678; --rule:#e3e7ed; --bg:#fbfbfb; --card:#fff; --accent:#1d4ed8; --dark:#0b0b0c; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); line-height:1.5; font-size:15px; }
+  .wrap { max-width:1400px; margin:0 auto; padding:36px 28px 90px; }
+  h1 { font-size:28px; margin:0 0 6px; letter-spacing:-0.01em; }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 10px; max-width:900px; }
+  .brief { background:#fff; border:1px solid var(--rule); border-left:3px solid var(--accent); border-radius:6px; padding:12px 16px; font-size:14px; color:var(--ink); margin:0 0 28px; max-width:900px; }
+  .brief em { color:var(--muted); }
+  .option { background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:18px; margin:0 0 22px; display:grid; grid-template-columns:380px 1fr; gap:22px; align-items:start; position:relative; }
+  .option.current { border-color:#c9ced6; background:#f6f7f9; }
+  .option.pick { border:2px solid var(--accent); box-shadow:0 4px 14px rgba(29,78,216,.08); }
+  .badge { position:absolute; top:10px; right:12px; font-size:10px; text-transform:uppercase; letter-spacing:.08em; padding:4px 9px; border-radius:999px; font-weight:600; color:#fff; background:var(--accent); }
+  .badge.gray { background:#6b7280; }
+  .full img { width:100%; aspect-ratio:1/1; display:block; border:1px solid var(--rule); border-radius:6px; background:#fff; }
+  .full .cap { font-family:"SF Mono",Menlo,Consolas,monospace; font-size:11px; color:var(--muted); margin-top:6px; }
+  .right h2 { margin:0 0 2px; font-size:20px; }
+  .right .idea { font-size:14px; margin:0 0 2px; }
+  .right .idea strong, .right .fit strong { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; margin-right:6px; }
+  .right .fit { font-size:14px; margin:0 0 14px; color:var(--ink); }
+  .tiles { display:flex; gap:18px; flex-wrap:wrap; }
+  .tile { width:420px; }
+  .tile .lab { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; }
+  /* Mirrors the ML site product card: aspect-[5/3] object-cover, dark:invert on dark bg */
+  .frame { width:420px; aspect-ratio:5/3; overflow:hidden; border-radius:8px; border:1px solid var(--rule); background:#fff; }
+  .frame img { width:100%; height:100%; object-fit:cover; display:block; }
+  .frame.dark { background:var(--dark); border-color:#26262a; }
+  .frame.dark img { filter:invert(1); }
+  .tile.darkwrap { background:var(--dark); padding:12px; border-radius:10px; width:444px; }
+  .tile.darkwrap .lab { color:#9ca3af; }
+  .slug { font-family:"SF Mono",Menlo,Consolas,monospace; font-size:12px; color:var(--muted); }
+  .picks { background:#fff; border:2px solid var(--accent); border-radius:10px; padding:14px 18px; margin:0 0 26px; max-width:900px; font-size:14px; }
+  .picks h3 { margin:0 0 6px; font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); }
+  .picks ol { margin:0; padding-left:20px; }
+  @media (max-width:900px){ .option{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gentle Way product tile — clipart options</h1>
+  <p class="meta">Six alternates generated 2026-08-21 with the house style suffix and the same garden formula as the other product tiles (stone path from the foreground, low clipped hedges, one slender tree behind). For each: the full 1024² image, then the tile crop exactly as the Monument Labs site renders it (aspect 5/3, object-cover, ~420px wide) in light and in dark mode (<code>dark:invert</code> on #0b0b0c).</p>
+  <div class="brief">Brief: the gi-and-grappling statue <em>"doesn't fit in there… there's a vibe related to monuments and classical Greek style… the closest you'd get would be two people wrestling, almost like gladiators / pankration. I'd almost lean towards just a visual nod to the essence of judo: the push-pull, the timing, the tipping."</em> All six stay in the classical-monument vocabulary: no gi, no belts, no dojo.</div>
+
+  <div class="picks">
+    <h3>Suggested top 2</h3>
+    <ol>
+      <li><strong>tipping-column</strong> — the purest "kuzushi" image: one column past its tipping point, frozen. Reads instantly at tile size, and it is the most on-brand object in the set (it is literally a monument).</li>
+      <li><strong>lever</strong> — "maximum efficiency, minimum effort" in one glance: a small weight lifting a huge sphere. Strong silhouette, and the wide beam survives the 5/3 crop best.</li>
+    </ol>
+  </div>
+
+  <!-- CURRENT -->
+  <section class="option current">
+    <div class="badge gray">Current</div>
+    <div class="full"><img src="thumb-current.webp" alt="current"><div class="cap">nuxt-app/public/img/clipart/product-gentleway.webp</div></div>
+    <div class="right">
+      <h2>Current — relief stele, two judoka in gi</h2>
+      <p class="idea"><strong>Idea</strong> Literal judo: hip throw (o-goshi) carved on a stele.</p>
+      <p class="fit"><strong>Fit</strong> Garden formula matches, but the gi/belt/bare feet read as a modern dojo scene dropped into a classical garden — the mismatch Kyle flagged.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-current.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-current.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPPING COLUMN -->
+  <section class="option pick">
+    <div class="badge">Pick 1</div>
+    <div class="full"><img src="thumb-tipping-column.webp" alt="tipping column"><div class="cap">product-gentleway-tipping-column.png</div></div>
+    <div class="right">
+      <h2>Tipping column <span class="slug">product-gentleway-tipping-column</span></h2>
+      <p class="idea"><strong>Idea</strong> Kuzushi — the instant past the tipping point; the throw is already decided before the fall.</p>
+      <p class="fit"><strong>Fit</strong> The strongest fit: a single classical column on a pedestal is the set's native vocabulary (column-ruin, emblem-column). The diagonal is the only thing that breaks the set's verticals, which is exactly the point. Crop keeps the lean and the pedestal.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-tipping-column.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-tipping-column.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVER -->
+  <section class="option pick">
+    <div class="badge">Pick 2</div>
+    <div class="full"><img src="thumb-lever.webp" alt="lever"><div class="cap">product-gentleway-lever.png</div></div>
+    <div class="right">
+      <h2>Lever and fulcrum <span class="slug">product-gentleway-lever</span></h2>
+      <p class="idea"><strong>Idea</strong> Seiryoku zen'yo — maximum efficiency, minimum effort; a small weight moving a great mass through leverage.</p>
+      <p class="fit"><strong>Fit</strong> Stone beam, carved block, marble sphere: all classical garden furniture. The long horizontal beam is the best-suited composition for a 5/3 crop. Slight risk it reads as a playground seesaw at small sizes.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-lever.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-lever.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BALANCE -->
+  <section class="option">
+    <div class="full"><img src="thumb-balance.webp" alt="balance"><div class="cap">product-gentleway-balance.png</div></div>
+    <div class="right">
+      <h2>Tilted balance <span class="slug">product-gentleway-balance</span></h2>
+      <p class="idea"><strong>Idea</strong> Off-balance / breaking posture — one pan dropped, the beam thrown hard, a sphere rolling off the high end.</p>
+      <p class="fit"><strong>Fit</strong> Pedestal-in-garden framing matches product-daylight almost one-for-one. The scale reads as "justice" first though, which pulls toward Daylight Legal rather than judo. Crop keeps the whole beam.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-balance.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-balance.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANKRATION -->
+  <section class="option">
+    <div class="full"><img src="thumb-pankration.webp" alt="pankration"><div class="cap">product-gentleway-pankration.png</div></div>
+    <div class="right">
+      <h2>Pankration relief <span class="slug">product-gentleway-pankration</span></h2>
+      <p class="idea"><strong>Idea</strong> The throw itself, but in the Greek athletic tradition: two wrestlers on a relief frieze, one lifted off his feet.</p>
+      <p class="fit"><strong>Fit</strong> Kyle's "closest literal" option. Relief panel on a plinth is the same device as the current stele, minus the gi. Figures shrink in the tile crop; the dark-mode version reads best. Note: the generator rejected the first prompt (nudity); the rephrase put them in short tunics.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-pankration.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-pankration.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCUS -->
+  <section class="option">
+    <div class="full"><img src="thumb-discus.webp" alt="discus"><div class="cap">product-gentleway-discus.png</div></div>
+    <div class="right">
+      <h2>Discus thrower <span class="slug">product-gentleway-discus</span></h2>
+      <p class="idea"><strong>Idea</strong> Timing and the pivot — the coiled instant before release, weight on one foot.</p>
+      <p class="fit"><strong>Fit</strong> The most "museum-classical" of the six and the most finely drawn, but it is a generic Greek statue; it says "athletics" more than "judo." The extra portico on the left adds clutter the other product tiles don't have.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-discus.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-discus.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YIELDING ARCH -->
+  <section class="option">
+    <div class="full"><img src="thumb-yielding-arch.webp" alt="yielding arch"><div class="cap">product-gentleway-yielding-arch.png</div></div>
+    <div class="right">
+      <h2>Yielding arch <span class="slug">product-gentleway-yielding-arch</span></h2>
+      <p class="idea"><strong>Idea</strong> Ju — yielding vs resisting: one rigid column, one reed-like pilaster that bows and still holds the keystone.</p>
+      <p class="fit"><strong>Fit</strong> Archway + hedges + path sits naturally beside product-margin's alcove arch. The metaphor is the most literal "gentle way" of the set, but the bowed side reads as a drawing error at thumbnail size; the crop also loses the keystone.</p>
+      <div class="tiles">
+        <div class="tile"><div class="lab">Tile crop · light</div><div class="frame"><img src="thumb-yielding-arch.webp" alt=""></div></div>
+        <div class="tile darkwrap"><div class="lab">Tile crop · dark (invert)</div><div class="frame dark"><img src="thumb-yielding-arch.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

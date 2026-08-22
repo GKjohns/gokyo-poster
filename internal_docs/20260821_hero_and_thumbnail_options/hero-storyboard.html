@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gentle Way · top-of-page storyboard</title>
+<style>
+  :root{
+    --paper:#faf8f4; --ink:#1c1a17; --muted:#6b6459; --seal:#a33b2e; --hair:#e5dfd4;
+    --display:"Iowan Old Style","Palatino Nova",Palatino,Georgia,serif;
+    --kanji:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Public Sans","Segoe UI",Helvetica,Arial,sans-serif;
+    --board:#e9e4da;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--board);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1386px;margin:0 auto;padding:40px 32px 80px}
+
+  /* ---------- storyboard chrome ---------- */
+  .intro h1{font-family:var(--display);font-weight:400;font-size:30px;margin:0 0 10px;letter-spacing:-.01em}
+  .intro p{font-size:14px;line-height:1.5;color:var(--muted);max-width:900px;margin:0 0 6px}
+  .opt{margin-top:56px;padding-top:28px;border-top:1px solid #cfc8ba}
+  .opt-head{display:grid;grid-template-columns:900px 1fr;gap:32px;align-items:end;margin-bottom:14px}
+  .opt-head .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+  .opt-head h2{font-family:var(--display);font-weight:400;font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
+  .opt-head .idea{font-size:14px;line-height:1.5;margin:0;color:var(--ink)}
+  .opt-head ul{margin:0;padding:0 0 0 18px;font-size:13px;line-height:1.5;color:var(--muted)}
+  .opt-head li{margin:0 0 4px}
+  .opt-head li b{color:var(--ink);font-weight:600}
+  .frames{display:flex;gap:32px;align-items:flex-start}
+  .flabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+
+  /* desktop frame: 1280x900 page top, shown at 70.3% = 900x633 */
+  .desk{width:900px;height:633px;overflow:hidden;position:relative;border:1px solid #cfc8ba;background:var(--paper);box-shadow:0 1px 2px rgba(28,26,23,.06)}
+  .desk .vp{width:1280px;height:900px;transform:scale(.703125);transform-origin:0 0;background:var(--paper);color:var(--ink);overflow:hidden}
+  /* mobile frame: 390 wide, 1:1 */
+  .mob{width:390px;border:1px solid #cfc8ba;background:var(--paper);color:var(--ink);overflow:hidden;box-shadow:0 1px 2px rgba(28,26,23,.06)}
+
+  /* ---------- the real site pieces ---------- */
+  .vp .site{width:1088px;margin:0 auto}
+  .vp .gh{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--hair);padding-bottom:8px;margin-bottom:24px}
+  .vp .gh .k{font-family:var(--kanji);font-size:18px}
+  .vp .gh .n{font-family:var(--display);font-size:14px;color:var(--muted)}
+  .vp .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 20px}
+  .card{display:block;color:inherit;text-decoration:none}
+  .card .im{aspect-ratio:1/1;border:1px solid var(--hair);background:#fff;border-radius:2px;overflow:hidden}
+  .card img{display:block;width:100%;height:100%;object-fit:cover}
+  .card .cap{margin-top:8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .card .cap .r{font-family:var(--display);font-size:14px;color:var(--ink)}
+  .card .cap .k{font-family:var(--kanji);font-size:12px;color:var(--muted)}
+  .mark{fill:currentColor;flex:none}
+  .display{font-family:var(--display)}
+  .kanji{font-family:var(--kanji)}
+  .muted{color:var(--muted)}
+
+  /* mobile group header (real: px-4, kanji text-lg, name text-sm) */
+  .mob .gh{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--hair);padding-bottom:8px;margin:0 16px}
+  .mob .gh .k{font-family:var(--kanji);font-size:18px}
+  .mob .gh .n{font-family:var(--display);font-size:14px;color:var(--muted)}
+  .mob .gridhint{margin:16px 16px 0;height:42px;border:1px dashed #d8d1c4;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#a9a193}
+
+  /* ================= Option 0 (current) ================= */
+  .o0 header{padding:112px 16px 64px;text-align:center}
+  .o0 .brand{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:16px;line-height:1;letter-spacing:-.01em}
+  .o0 .eyebrow{margin:12px 0 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .o0 .eyebrow .kanji{text-transform:none;letter-spacing:0}
+  .o0 .big{margin:48px 0 0;font-family:var(--kanji);font-size:60px;line-height:1;letter-spacing:.025em}
+  .o0 h1{margin:16px 0 0;font-family:var(--display);font-weight:400;font-size:30px;line-height:1.2}
+  .o0 .tag{margin:12px auto 0;font-size:14px;line-height:1.45;color:var(--muted);max-width:448px}
+  .o0 .dot{margin:32px auto 0;width:6px;height:6px;border-radius:50%;background:var(--seal)}
+  .o0 .hint{margin:32px 0 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .mob .o0 header{padding:80px 16px 56px}
+  .mob .o0 .eyebrow{margin-top:12px}
+  .mob .o0 .big{font-size:48px;margin-top:40px}
+  .mob .o0 h1{font-size:24px}
+  .mob .o0 .hint{margin-top:32px}
+
+  /* ================= Option 1: header bar only ================= */
+  .o1 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair)}
+  .o1 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:22px;line-height:1;letter-spacing:-.01em;margin:0;font-weight:400}
+  .o1 .right{font-family:var(--display);font-size:15px;color:var(--muted)}
+  .o1 .gap{height:56px}
+  .mob .o1 .bar{height:60px;padding:0 16px}
+  .mob .o1 .brand{font-size:20px}
+  .mob .o1 .right{display:none}
+  .mob .o1 .gap{height:28px}
+
+  /* ================= Option 2: bar + compact title row ================= */
+  .o2 .bar{height:64px;display:flex;align-items:center;justify-content:space-between}
+  .o2 .right{font-family:var(--display);font-size:15px;color:var(--muted)}
+  .o2 .row{display:flex;align-items:baseline;justify-content:space-between;gap:40px;margin-top:56px;padding-bottom:22px}
+  .o2 h1{margin:0;font-family:var(--display);font-weight:400;font-size:56px;line-height:1;letter-spacing:-.015em}
+  .o2 .sub{font-family:var(--display);font-size:15px;color:var(--muted);text-align:right;max-width:720px;line-height:1.4}
+  .o2 .gap{height:36px}
+  .mob .o2 .bar{height:60px;padding:0 16px}
+  .mob .o2 .row{display:block;margin:28px 16px 0;padding-bottom:0}
+  .mob .o2 h1{font-size:44px}
+  .mob .o2 .sub{text-align:left;margin-top:12px;max-width:none}
+  .mob .o2 .gap{height:36px}
+
+  /* ================= Option 3: bold centered lockup ================= */
+  .o3 .lock{padding:72px 0 0;text-align:center}
+  .o3 h1{margin:20px 0 0;font-family:var(--display);font-weight:400;font-size:72px;line-height:1;letter-spacing:-.02em}
+  .o3 .sub{margin:18px auto 0;font-family:var(--display);font-size:17px;color:var(--muted);line-height:1.45;max-width:640px}
+  .o3 .gap{height:72px}
+  .mob .o3 .lock{padding:56px 16px 0}
+  .mob .o3 h1{font-size:44px;margin-top:16px}
+  .mob .o3 .sub{font-size:15px;margin-top:14px}
+  .mob .o3 .gap{height:48px}
+
+  /* ================= Option 4: poster title consolidated ================= */
+  .o4 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair)}
+  .o4 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:20px;line-height:1;letter-spacing:-.01em}
+  .o4 .right{font-family:var(--display);font-size:15px;color:var(--muted)}
+  .o4 .title{margin-top:64px;display:flex;align-items:baseline;gap:22px}
+  .o4 .title .kj{font-family:var(--kanji);font-size:46px;line-height:1;letter-spacing:.04em}
+  .o4 h1{margin:0;font-family:var(--display);font-weight:400;font-size:56px;line-height:1;letter-spacing:-.015em}
+  .o4 .sub{margin:16px 0 0;font-family:var(--display);font-size:15px;color:var(--muted)}
+  .o4 .gap{height:56px}
+  .o4 .gh{justify-content:flex-start}
+  .o4 .gh .hint{margin-left:auto;font-family:var(--display);font-size:15px;font-style:italic;color:var(--muted)}
+  .mob .o4 .bar{height:60px;padding:0 16px}
+  .mob .o4 .right{display:none}
+  .mob .o4 .title{display:block;margin:36px 16px 0}
+  .mob .o4 .title .kj{font-size:34px;display:block}
+  .mob .o4 h1{font-size:40px;margin-top:8px}
+  .mob .o4 .sub{margin:12px 16px 0}
+  .mob .o4 .gap{height:36px}
+  .mob .o4 .gh .hint{display:none}
+
+  /* ================= Option 5: editorial masthead ================= */
+  .o5 .mast{margin-top:28px;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);height:58px;display:flex;align-items:center;justify-content:space-between}
+  .o5 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:18px;line-height:1;letter-spacing:-.01em}
+  .o5 .right{font-family:var(--display);font-size:18px;color:var(--muted)}
+  .o5 .right .kanji{color:var(--ink);margin-right:10px}
+  .o5 .intro2{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:44px 0 0;margin-bottom:56px;align-items:start}
+  .o5 h1{margin:0;font-family:var(--display);font-weight:400;font-size:52px;line-height:1;letter-spacing:-.015em}
+  .o5 .stand{font-family:var(--display);font-size:18px;line-height:1.5;color:var(--muted);max-width:520px;margin:0;padding-top:6px}
+  .mob .o5 .mast{margin:0 16px;height:56px}
+  .mob .o5 .right{font-size:16px}
+  .mob .o5 .intro2{display:block;margin:0 16px 28px;padding:28px 0 0}
+  .mob .o5 h1{font-size:36px}
+  .mob .o5 .stand{font-size:16px;margin-top:12px}
+
+  /* ================= Option 6: chapters ================= */
+  .o6 .bar{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair)}
+  .o6 .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:22px;line-height:1;letter-spacing:-.01em;margin:0;font-weight:400}
+  .o6 .right{font-family:var(--display);font-size:15px;color:var(--muted)}
+  .o6 .gap{height:64px}
+  .vp .o6 .gh{display:block;border-bottom:1px solid var(--hair);padding-bottom:18px;margin-bottom:28px}
+  .vp .o6 .gh .line{display:flex;align-items:baseline;gap:16px}
+  .vp .o6 .gh .k{font-size:40px;line-height:1;letter-spacing:.04em}
+  .vp .o6 .gh .n{font-size:40px;line-height:1;color:var(--ink);letter-spacing:-.015em}
+  .vp .o6 .gh .lead{margin:14px 0 0;font-family:var(--display);font-size:15px;color:var(--muted)}
+  .mob .o6 .bar{height:60px;padding:0 16px}
+  .mob .o6 .right{display:none}
+  .mob .o6 .gap{height:36px}
+  .mob .o6 .gh{display:block;padding-bottom:14px}
+  .mob .o6 .gh .line{display:flex;align-items:baseline;gap:12px}
+  .mob .o6 .gh .k{font-size:30px;line-height:1}
+  .mob .o6 .gh .n{font-size:30px;line-height:1;color:var(--ink)}
+  .mob .o6 .gh .lead{margin:10px 0 0;font-family:var(--display);font-size:15px;color:var(--muted)}
+
+  /* a shared note row under the frames */
+  .hier{margin-top:10px;font-size:12px;color:var(--muted)}
+  .hier b{color:var(--ink);font-weight:600}
+  .rec{margin-top:64px;padding:24px 28px;background:var(--paper);border:1px solid #cfc8ba;max-width:900px}
+  .rec h2{font-family:var(--display);font-weight:400;font-size:22px;margin:0 0 8px}
+  .rec p{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 6px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <rect x="4" y="24" width="56" height="12" rx="1"/>
+    <rect x="24" y="20" width="16" height="20" rx="1.25"/>
+    <rect x="22" y="36" width="9" height="22" rx="1" transform="rotate(14 27 38)"/>
+    <rect x="33" y="36" width="9" height="22" rx="1" transform="rotate(-14 37 38)"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Gentle Way · top-of-page options</h1>
+    <p>Seven frames. The desktop frame is the top 900px of the real 1280px page, shown at 70%, with the real Dai Ikkyo group header and first row of cards so each header's weight reads against the grid. The 390px mobile frame is 1:1 and shows the header plus the first group header only. Palette and type stacks are the site's own; the mark is inlined from favicon.svg.</p>
+    <p>Every alternative sets all copy above the grid in the display serif. The current page is the only one with a third (sans) face up there. "Type sizes" counts distinct font sizes above the first group header at desktop width.</p>
+  </div>
+
+  <!-- ===================== OPTION 0 ===================== -->
+  <section class="opt" id="o0">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 0 · reference</p>
+        <h2>Current</h2>
+        <p class="idea">Centered poster hero: 24px mark, kanji eyebrow, 60px 五教の技, 30px H1 "Gokyo no Waza", sans tagline, seal dot, uppercase hover hint. Grid begins around 590px.</p>
+      </div>
+      <ul>
+        <li><b>Six type sizes</b> above the grid (16, 12, 60, 30, 14, 12), three scripts, three typefaces.</li>
+        <li>The H1 is "Gokyo no Waza" but the largest element is the kanji; the brand mark is the smallest.</li>
+        <li>Vertical stack of seven centered elements; nothing is aligned to the grid's left edge.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o0">
+          <header>
+            <div class="brand"><svg class="mark" width="24" height="24"><use href="#mark"/></svg><span>Gentle Way</span></div>
+            <p class="eyebrow"><span class="kanji">柔道</span> · jūdō · the gentle way</p>
+            <p class="big">五教の技</p>
+            <h1>Gokyo no Waza</h1>
+            <p class="tag">The forty throws of Kodokan judo, and the everyday physics that explain them.</p>
+            <div class="dot"></div>
+            <p class="hint">Hover a throw to see how it feels</p>
+          </header>
+          <div class="site">
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o0">
+          <header>
+            <div class="brand"><svg class="mark" width="24" height="24"><use href="#mark"/></svg><span>Gentle Way</span></div>
+            <p class="eyebrow"><span class="kanji">柔道</span> · jūdō · the gentle way</p>
+            <p class="big">五教の技</p>
+            <h1>Gokyo no Waza</h1>
+            <p class="tag">The forty throws of Kodokan judo, and the everyday physics that explain them.</p>
+            <div class="dot"></div>
+            <p class="hint">Tap a throw to see how it feels</p>
+          </header>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 1 ===================== -->
+  <section class="opt" id="o1">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 1</p>
+        <h2>Header bar only</h2>
+        <p class="idea">A 64px bar is the whole top of the page: 32px mark and wordmark as the H1 on the left, the one-sentence description quietly on the right. The grid starts at about 120px. Nothing else.</p>
+      </div>
+      <ul>
+        <li><b>2 type sizes</b> above the grid (22 wordmark, 15 sentence). <b>H1: "Gentle Way"</b>, Latin. Kanji first appears in the group header, where it names something.</li>
+        <li>Gains: the poster is the page; highest grid start of any option; the bar is the same component the throw pages would use.</li>
+        <li>Loses: 五教の技 / Gokyo no Waza is no longer announced; it lives only in the bar sentence, the title tag and the footer. The least "poster" of the set.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o1">
+          <div class="site">
+            <div class="bar">
+              <h1 class="brand"><svg class="mark" width="32" height="32"><use href="#mark"/></svg><span>Gentle Way</span></h1>
+              <span class="right">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</span>
+            </div>
+            <div class="gap"></div>
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o1">
+          <div class="bar">
+            <h1 class="brand"><svg class="mark" width="28" height="28"><use href="#mark"/></svg><span>Gentle Way</span></h1>
+          </div>
+          <div class="gap"></div>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 2 ===================== -->
+  <section class="opt" id="o2">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 2</p>
+        <h2>Header bar + compact title row</h2>
+        <p class="idea">Mark-only bar with a quiet count on the right. One title row under it: "Gentle Way" at 56px left, and on the same baseline to the right the poster's name and description in one muted line. Then the grid.</p>
+      </div>
+      <ul>
+        <li><b>2 type sizes</b> above the grid (56 H1, 15 for everything else). <b>H1: "Gentle Way"</b>, Latin. Kanji only in the group headers.</li>
+        <li>Gains: a real, large wordmark aligned to the grid's left edge; "Gokyo no Waza" survives in the subtitle without a second heading size; grid starts near 250px.</li>
+        <li>Loses: the row is a wide-format idea, on mobile it stacks into a conventional title and subtitle; the bar mark and the H1 both say "brand", so the bar does little.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o2">
+          <div class="site">
+            <div class="bar">
+              <svg class="mark" width="32" height="32"><use href="#mark"/></svg>
+              <span class="right">Forty throws · Five kyo</span>
+            </div>
+            <div class="row">
+              <h1>Gentle Way</h1>
+              <p class="sub">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</p>
+            </div>
+            <div class="gap"></div>
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o2">
+          <div class="bar">
+            <svg class="mark" width="28" height="28"><use href="#mark"/></svg>
+            <span class="right">Forty throws · Five kyo</span>
+          </div>
+          <div class="row">
+            <h1>Gentle Way</h1>
+            <p class="sub">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</p>
+          </div>
+          <div class="gap"></div>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 3 ===================== -->
+  <section class="opt" id="o3">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 3</p>
+        <h2>Bold lockup, centered</h2>
+        <p class="idea">The mark at 88px over a 72px "Gentle Way", one muted line, generous air, then the grid. The brand is the hero; the poster's name is the subtitle.</p>
+      </div>
+      <ul>
+        <li><b>2 type sizes</b> above the grid (72 H1, 17 subtitle). <b>H1: "Gentle Way"</b>, Latin. No kanji above the grid at all.</li>
+        <li>Gains: the mark finally has presence; one focal point; still reads as a poster sheet with a title.</li>
+        <li>Loses: the most vertical space of the alternatives (group header near 360px); a centered block above a left-aligned grid, same axis tension as today.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o3">
+          <div class="lock">
+            <svg class="mark" width="88" height="88"><use href="#mark"/></svg>
+            <h1>Gentle Way</h1>
+            <p class="sub">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</p>
+          </div>
+          <div class="gap"></div>
+          <div class="site">
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o3">
+          <div class="lock">
+            <svg class="mark" width="64" height="64"><use href="#mark"/></svg>
+            <h1>Gentle Way</h1>
+            <p class="sub">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</p>
+          </div>
+          <div class="gap"></div>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 4 ===================== -->
+  <section class="opt" id="o4">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 4</p>
+        <h2>Poster title first, consolidated</h2>
+        <p class="idea">Keep the poster's subject as the title, but as one lockup: 五教の技 and "Gokyo no Waza" on one line at matched cap height, left-aligned under a proper brand bar. One subtitle line. The hover hint moves to the right edge of the first group header. Eyebrow, seal dot and hint stack are gone.</p>
+      </div>
+      <ul>
+        <li><b>3 type sizes</b> above the grid (20 bar, 56 title with the kanji optically matched at 46, 15 subtitle and hint). <b>H1: "Gokyo no Waza"</b> with kanji alongside.</li>
+        <li>Gains: the kanji keeps its size and meaning without four supporting lines; brand and poster title are clearly two levels; the page still says what it is a poster of.</li>
+        <li>Loses: still the busiest of the alternatives; the mixed-script title has to stack on mobile; the hint at the grid edge competes with the group name.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o4">
+          <div class="site">
+            <div class="bar">
+              <div class="brand"><svg class="mark" width="32" height="32"><use href="#mark"/></svg><span>Gentle Way</span></div>
+              <span class="right">Forty throws · Five kyo</span>
+            </div>
+            <div class="title"><span class="kj">五教の技</span><h1>Gokyo no Waza</h1></div>
+            <p class="sub">The forty throws of Kodokan judo, and the everyday physics that explain them.</p>
+            <div class="gap"></div>
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span><span class="hint">Hover a throw to see how it feels</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o4">
+          <div class="bar">
+            <div class="brand"><svg class="mark" width="28" height="28"><use href="#mark"/></svg><span>Gentle Way</span></div>
+          </div>
+          <div class="title"><span class="kj">五教の技</span><h1>Gokyo no Waza</h1></div>
+          <p class="sub">The forty throws of Kodokan judo, and the everyday physics that explain them.</p>
+          <div class="gap"></div>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 5 ===================== -->
+  <section class="opt" id="o5">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 5</p>
+        <h2>Editorial masthead</h2>
+        <p class="idea">A newspaper masthead: ruled bar with brand left and 柔道 right, a rule, then a two-column intro: H1 "Gokyo no Waza" in the left column, a two-sentence standfirst in the right that says what this is and how to use it. Then the grid.</p>
+      </div>
+      <ul>
+        <li><b>2 type sizes</b> above the grid (18 for bar and standfirst, 52 H1). <b>H1: "Gokyo no Waza"</b>, Latin; kanji appears once, small, in the masthead.</li>
+        <li>Gains: tells a first-time visitor what this is and how to use it in one read; the rules give the page a printed-sheet structure the card hairlines continue; the hover hint gets a proper sentence instead of a caption.</li>
+        <li>Loses: the most words of the set, and a standfirst is copy you have to keep true; the masthead mark is smaller than in 3 or 4.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o5">
+          <div class="site">
+            <div class="mast">
+              <div class="brand"><svg class="mark" width="32" height="32"><use href="#mark"/></svg><span>Gentle Way</span></div>
+              <span class="right"><span class="kanji">柔道</span>the gentle way</span>
+            </div>
+            <div class="intro2">
+              <h1>Gokyo no Waza</h1>
+              <p class="stand">The forty throws of Kodokan judo in their 1920 order, each drawn in sumi-e ink. Hover a throw to see the everyday scene that explains its physics, and click for the full story.</p>
+            </div>
+            <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o5">
+          <div class="mast">
+            <div class="brand"><svg class="mark" width="28" height="28"><use href="#mark"/></svg><span>Gentle Way</span></div>
+            <span class="right"><span class="kanji">柔道</span>the gentle way</span>
+          </div>
+          <div class="intro2">
+            <h1>Gokyo no Waza</h1>
+            <p class="stand">The forty throws of Kodokan judo in their 1920 order, each drawn in sumi-e ink. Tap a throw to see the everyday scene that explains its physics, tap again for the full story.</p>
+          </div>
+          <div class="gh"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION 6 ===================== -->
+  <section class="opt" id="o6">
+    <div class="opt-head">
+      <div>
+        <p class="num">Option 6</p>
+        <h2>Chapters: the group header is the title</h2>
+        <p class="idea">The bar carries the brand H1 and the one-line description; there is no title block. Each kyo header is promoted to a 40px chapter heading with a one-line lead, so 第一教 Dai Ikkyo is the first big thing on the page and the poster reads as five chapters of eight throws.</p>
+      </div>
+      <ul>
+        <li><b>3 type sizes</b> above the grid (22 bar, 40 chapter, 15 lead). <b>H1: "Gentle Way"</b>, Latin; the H2s carry kanji and romaji at equal size, the only place both scripts sit together.</li>
+        <li>Gains: the first heading is about the content, not the brand or the poster; kanji stays prominent as structure rather than ornament; the treatment repeats down the page, so the rhythm holds past the fold.</li>
+        <li>Loses: "Gokyo no Waza" exists only in the bar sentence; the chapter headings must keep their size on mobile or the idea collapses into option 1.</li>
+      </ul>
+    </div>
+    <div class="frames">
+      <div>
+        <p class="flabel">Desktop 1280 · 70%</p>
+        <div class="desk"><div class="vp"><div class="o6">
+          <div class="site">
+            <div class="bar">
+              <h1 class="brand"><svg class="mark" width="32" height="32"><use href="#mark"/></svg><span>Gentle Way</span></h1>
+              <span class="right">Gokyo no Waza · the forty throws of Kodokan judo, and the everyday physics that explain them</span>
+            </div>
+            <div class="gap"></div>
+            <div class="gh">
+              <div class="line"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+              <p class="lead">First group · eight throws. Hover a throw to see how it feels; click for the story.</p>
+            </div>
+            <div class="grid" data-cards></div>
+          </div>
+        </div></div></div>
+      </div>
+      <div>
+        <p class="flabel">Mobile 390 · 1:1</p>
+        <div class="mob"><div class="o6">
+          <div class="bar">
+            <h1 class="brand"><svg class="mark" width="28" height="28"><use href="#mark"/></svg><span>Gentle Way</span></h1>
+          </div>
+          <div class="gap"></div>
+          <div class="gh">
+            <div class="line"><span class="k">第一教</span><span class="n">Dai Ikkyo</span></div>
+            <p class="lead">First group · eight throws. Tap a throw to see how it feels.</p>
+          </div>
+          <div class="gridhint">grid begins</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rec">
+    <h2>Reading the set</h2>
+    <p>Options 1, 2, 3 and 6 make "Gentle Way" the H1 and push the poster's name down to one muted line; 4 and 5 keep "Gokyo no Waza" as the H1 and treat the brand as a bar. Every option drops the eyebrow, the seal dot and the uppercase hint as separate elements; where a hint survives it is a sentence in the same size as the subtitle.</p>
+    <p>If the page should be the poster and nothing else: 1 or 6. If it should still introduce itself: 2 (shortest) or 5 (most helpful). 3 is the brand-forward version. 4 is the closest to today with the clutter removed.</p>
+  </div>
+</div>
+
+<script>
+  const cards = [
+    ['deashi-harai','Deashi Harai','出足払'],
+    ['hiza-guruma','Hiza Guruma','膝車'],
+    ['sasae-tsurikomi-ashi','Sasae Tsurikomi Ashi','支釣込足'],
+    ['uki-goshi','Uki Goshi','浮腰'],
+    ['osoto-gari','Osoto Gari','大外刈'],
+    ['o-goshi','O Goshi','大腰'],
+    ['ouchi-gari','Ouchi Gari','大内刈'],
+    ['seoi-nage','Seoi Nage','背負投']
+  ];
+  const IMG = '../../src/public/img/throws/';
+  const html = cards.slice(0,8).map(([id,r,k]) =>
+    `<a class="card" href="#"><div class="im"><img src="${IMG}${id}.webp" width="640" height="640" alt="${r}"></div><div class="cap"><span class="r">${r}</span><span class="k">${k}</span></div></a>`
+  ).join('');
+  document.querySelectorAll('[data-cards]').forEach(el => { el.innerHTML = html; });
+</script>
+</body>
+</html>
