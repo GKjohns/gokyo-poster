@@ -93,20 +93,15 @@ useSeoMeta({
 
 <template>
   <div>
-    <UContainer class="max-w-4xl pt-8 sm:pt-10 pb-24">
-      <nav class="flex items-center justify-between text-xs text-inkmuted">
-        <NuxtLink
-          to="/"
-          class="inline-flex hover:text-seal"
-          aria-label="Back to the poster"
-        >
-          <AppLogo :size="22" />
-        </NuxtLink>
-        <NuxtLink
-          to="/"
-          class="underline underline-offset-2 hover:text-seal"
-        >All forty throws</NuxtLink>
-      </nav>
+    <UContainer class="max-w-4xl pb-24">
+      <AppMasthead>
+        <template #right>
+          <NuxtLink
+            to="/"
+            class="font-display text-base sm:text-lg text-inkmuted hover:text-seal"
+          >All forty throws</NuxtLink>
+        </template>
+      </AppMasthead>
 
       <main class="mt-10 sm:mt-14">
         <header>

@@ -97,43 +97,24 @@ useSeoMeta({
 
 <template>
   <div>
-    <header class="pt-20 pb-14 sm:pt-28 sm:pb-16 text-center px-4">
-      <div class="flex flex-col items-center gap-3 mb-10 sm:mb-12">
-        <NuxtLink
-          to="/"
-          class="inline-flex hover:text-seal"
-          aria-label="Gentle Way home"
-        >
-          <AppLogo :size="24" />
-        </NuxtLink>
-        <p class="text-xs uppercase tracking-widest text-inkmuted">
-          <span class="font-kanji normal-case tracking-normal">柔道</span> · jūdō · the gentle way
-        </p>
-      </div>
-      <p class="font-kanji text-5xl sm:text-6xl text-ink tracking-wide">
-        五教の技
-      </p>
-      <h1 class="font-display text-2xl sm:text-3xl mt-4 text-ink">
-        Gokyo no Waza
-      </h1>
-      <p class="mt-3 text-sm text-inkmuted max-w-md mx-auto">
-        The forty throws of Kodokan judo, and the everyday physics that explain them.
-      </p>
-      <div
-        class="mx-auto mt-8 h-1.5 w-1.5 rounded-full bg-seal"
-        aria-hidden="true"
-      />
-      <p class="mt-8 text-xs uppercase tracking-widest text-inkmuted">
-        <span class="hidden [@media(hover:hover)]:inline">Hover a throw to see how it feels</span>
-        <span class="inline [@media(hover:hover)]:hidden">Tap a throw to see how it feels. Tap again for the story</span>
-      </p>
-    </header>
-
     <UContainer class="max-w-6xl pb-24">
+      <AppMasthead />
+
+      <header class="pt-7 pb-7 sm:pt-11 sm:pb-14 grid sm:grid-cols-2 gap-x-12 items-start">
+        <h1 class="font-display text-4xl sm:text-[52px] leading-none tracking-[-0.015em] text-ink">
+          Gokyo no Waza
+        </h1>
+        <p class="font-display text-base sm:text-lg leading-normal text-inkmuted max-w-[520px] mt-3 sm:mt-0 sm:pt-1.5">
+          The forty throws of Kodokan judo in their 1920 order, each drawn in sumi-e ink.
+          <span class="hidden [@media(hover:hover)]:inline">Hover a throw to see the everyday scene that explains its physics, and click for the full story.</span>
+          <span class="inline [@media(hover:hover)]:hidden">Tap a throw to see the everyday scene that explains its physics, tap again for the full story.</span>
+        </p>
+      </header>
+
       <section
         v-for="group in groups"
         :key="group.id"
-        class="mt-14 first:mt-0"
+        class="mt-14 first-of-type:mt-0"
       >
         <div class="flex items-baseline gap-3 border-b border-hairline pb-2 mb-6">
           <h2 class="font-kanji text-lg text-ink">
