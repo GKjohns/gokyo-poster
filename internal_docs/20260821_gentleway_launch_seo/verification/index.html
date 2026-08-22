@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gentle Way launch: verification (2026-08-21)</title>
+<style>
+  :root { --ink: #1c1a17; --muted: #6b6459; --rule: #e5dfd4; --paper: #fff; --code: #f5f3ee; --seal: #a33b2e; --ok: #2f6b3a; --pend: #8a6d1f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 2.5rem 1.25rem 5rem; color: var(--ink); background: var(--paper); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.7rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 3rem 0 .75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
+  p, li { max-width: 78ch; }
+  .meta { color: var(--muted); margin: 0 0 1.5rem; }
+  .status { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: .1rem .5rem; border-radius: 3px; vertical-align: middle; margin-left: .4rem; }
+  .ok { background: #e6f1e7; color: var(--ok); }
+  .pend { background: #f6eed7; color: var(--pend); }
+  figure { margin: 1.25rem 0 1.75rem; }
+  figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #faf8f4; }
+  figure.narrow img { max-width: 420px; }
+  figure.icon img { max-width: 160px; }
+  figure.mobile img { max-width: 300px; }
+  figcaption { font-size: .88rem; color: var(--muted); margin-top: .45rem; max-width: 78ch; }
+  figcaption strong { color: var(--ink); font-weight: 600; }
+  pre { background: var(--code); border: 1px solid var(--rule); border-radius: 4px; padding: .85rem 1rem; overflow-x: auto; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  code { font: .92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--code); padding: .05em .3em; border-radius: 3px; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; font-size: .9rem; margin: .75rem 0 1.25rem; }
+  th, td { text-align: left; padding: .35rem .75rem .35rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; }
+  ul.checks { list-style: none; padding: 0; }
+  ul.checks li { padding-left: 1.5rem; position: relative; margin: .25rem 0; }
+  ul.checks li::before { content: "\2713"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+  ul.checks li.todo::before { content: "\25A1"; color: var(--pend); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  @media (max-width: 720px) { .pair { grid-template-columns: 1fr; } }
+  .note { border-left: 3px solid var(--seal); padding: .25rem 0 .25rem .9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Gentle Way launch: verification</h1>
+<p class="meta">Plan: <code>internal_docs/20260821_gentleway_launch_seo/implementation_plan.md</code>. Executed 2026-08-21 against the local tree (<code>src/</code>); nothing committed or pushed yet. Sprints 0 to 3 are complete; Sprint 4's production checks wait on the push and on Kyle's DNS cutover.</p>
+
+<h2>What was built</h2>
+<p><a href="https://gentleway.ink">gentleway.ink</a> serves the Gokyo no Waza poster with the full Monument Labs product SEO package (matching Camera Shy / cosmo / Clean Markdown): a real mark (the belt knot) with the canon favicon set and a 1200&times;630 OG card; <code>site.webmanifest</code>, <code>robots.txt</code>, <code>llms.txt</code>; canonical + OG/Twitter meta + JSON-LD on every route; a sitemap with image entries; 40 per-throw pages at <code>/throws/[id]</code> so the 25k words of mechanic / analogy / why-it-maps prose are in server HTML instead of hidden in a modal; a styled 404; <code>vercel.json</code> redirects (<code>.vercel.app</code> host and trailing slashes); a brand row and a "Built by Monument Labs" footer; and a Gentle Way tile, Product node and footer link on monumentlabs.io. The 40 analogies, images, palette, fonts and the hover / flip / modal interaction are unchanged.</p>
+
+<h2>Sprint 0: Mark + Kyle's manual toggles <span class="status ok">Complete (Kyle items pending)</span></h2>
+<p>Kyle picked option 7 from the gallery (<code>../logo-options-gentleway.html</code>): the belt knot, obi reduced to band + knot + two tails, with a tighter corner radius than the gallery render, in ink <code>#1c1a17</code>. Delivered as <code>src/public/favicon.svg</code> (64&times;64 viewBox, four filled rects) and <code>src/app/components/AppLogo.vue</code> (<code>currentColor</code>, optional wordmark). The mark's legibility at tab size was checked during Sprint 0; it appears at 512 px below (Sprint 1) and in the tab-sized header row on every page (Sprint 2).</p>
+<ul class="checks">
+  <li>Vercel: <code>gentleway.ink</code> (primary) and <code>www.gentleway.ink</code> (308 to apex) attached and verified on project <code>gokyo-poster</code>.</li>
+  <li class="todo">Kyle: GoDaddy <code>A @ 216.150.1.1</code>, <code>CNAME www &rarr; 7fe738d5defe2fc1.vercel-dns-016.com</code> (in progress 2026-08-21 evening).</li>
+  <li class="todo">Kyle: Google Search Console DNS TXT for the Domain property.</li>
+  <li class="todo">Kyle: Vercel dashboard, enable Web Analytics on the project.</li>
+</ul>
+
+<h2>Sprint 1: Brand assets + static SEO files <span class="status ok">Complete</span></h2>
+<p>The <code>brand-assets</code> skill rendered the canon set from <code>favicon.svg</code> into <code>src/public/</code>: <code>favicon.ico</code> (16/32/48, replaces the starter icon), <code>favicon-96.png</code>, <code>apple-touch-icon.png</code> (180&sup2;), <code>icon-192-maskable.png</code>, <code>icon-512-maskable.png</code>, <code>og-image.png</code> (1200&times;630). Sizes confirmed with <code>sips</code>. Plus <code>site.webmanifest</code> (parses as JSON, two maskable icons + 96 png + svg), <code>robots.txt</code> (allow all, explicit allows for the AI crawlers, <code>Sitemap:</code> line) and <code>llms.txt</code> (description, Monument Labs attribution, page patterns, notes). None of the three contain an em dash.</p>
+
+<figure>
+  <img src="screenshots/sprint1_og_card.webp" style="max-width:100%" alt="The Gentle Way OG card">
+  <figcaption><strong>og-image.png, 1200&times;630.</strong> House layout: belt-knot mark + "Gentle Way" wordmark centered in Iowan Old Style, the short tagline on one line with no orphan, seal-red <code>gentleway.ink</code> URL block bottom-right over "Monument Labs, Richmond, Virginia", paper background. Proves the card matches the live page's fonts and palette and has no overflow.</figcaption>
+</figure>
+
+<figure class="icon">
+  <img src="screenshots/sprint1_icon_512.webp" style="max-width:100%" alt="512 px maskable icon">
+  <figcaption><strong>icon-512-maskable.png.</strong> The knot reads as a solid ink belt on paper and sits inside the maskable safe zone (inner 80%); slightly below optical center, accepted.</figcaption>
+</figure>
+
+<h2>Sprint 2: Head, JSON-LD, brand row, footer, /throws/[id], error page, redirects <span class="status ok">Complete with deviations</span></h2>
+<p><code>npx nuxi typecheck</code>, <code>npm run lint</code> and <code>npm run build</code> green. The build prerenders 84 routes: <code>/</code>, 40 <code>/throws/*</code>, <code>/sitemap.xml</code>, the sitemap stylesheet and the per-route payloads (<code>ls .output/public/throws | wc -l</code> = 40). Everything below was checked against the <strong>server HTML</strong> in <code>.output/public/</code> and a local Nitro preview, not the hydrated DOM.</p>
+
+<h3>Server HTML head on <code>/</code></h3>
+<p>From <code>samples/index_head.html</code> (stylesheet and module preloads omitted). One description, one canonical, the four icon links declared once, absolute OG image, and the index title override so the tab does not read "Gentle Way &middot; Gentle Way".</p>
+<pre><code>&lt;title&gt;Gentle Way &middot; Gokyo no Waza, the forty throws of Kodokan judo&lt;/title&gt;
+&lt;link rel="icon" href="/favicon.ico" sizes="48x48"&gt;
+&lt;link rel="icon" href="/favicon.svg" type="image/svg+xml"&gt;
+&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;
+&lt;meta name="theme-color" content="#faf8f4"&gt;
+&lt;link rel="canonical" href="https://gentleway.ink"&gt;
+&lt;meta name="description" content="An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click."&gt;
+&lt;meta property="og:title" content="Gentle Way &middot; Gokyo no Waza, the forty throws of Kodokan judo"&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:site_name" content="Gentle Way"&gt;
+&lt;meta property="og:url" content="https://gentleway.ink"&gt;
+&lt;meta property="og:image" content="https://gentleway.ink/og-image.png"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:image:type" content="image/png"&gt;
+&lt;meta property="og:image:alt" content="Gentle Way: the forty throws of Kodokan judo"&gt;
+&lt;meta property="og:locale" content="en_US"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+
+<h3>JSON-LD on <code>/</code></h3>
+<p>From <code>samples/index_ld.json</code>: one <code>application/ld+json</code> script that <code>JSON.parse</code>s, a <code>@graph</code> of four nodes. The Organization uses the global id <code>https://monumentlabs.io/#org</code>; the <code>ItemList</code> carries all 40 throws in Gokyo order (positions 1 to 40, three shown).</p>
+<pre><code>{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://monumentlabs.io/#org", "name": "Monument Labs",
+      "url": "https://monumentlabs.io", "logo": "https://www.monumentlabs.io/og-image-monument.png",
+      "sameAs": ["https://www.linkedin.com/company/106072838"] },
+    { "@type": "WebSite", "@id": "https://gentleway.ink/#website", "url": "https://gentleway.ink",
+      "name": "Gentle Way", "description": "An interactive poster of the Gokyo no Waza, ...",
+      "publisher": { "@id": "https://monumentlabs.io/#org" }, "inLanguage": "en" },
+    { "@type": "WebApplication", "@id": "https://gentleway.ink/#app", "name": "Gentle Way",
+      "applicationCategory": "EducationalApplication", "applicationSubCategory": "Interactive poster",
+      "operatingSystem": "Any", "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true, "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "image": "https://gentleway.ink/og-image.png", "datePublished": "2026-08-22",
+      "about": { "@type": "Thing", "name": "Gokyo no Waza", "alternateName": "五教の技",
+                 "sameAs": "https://en.wikipedia.org/wiki/Gokyo_(judo)" },
+      "featureList": [ "All forty throws of the 1920 Kodokan Gokyo in canonical order", "... 4 more" ],
+      "publisher": { "@id": "https://monumentlabs.io/#org" }, "creator": { "@id": "https://monumentlabs.io/#org" } },
+    { "@type": "ItemList", "@id": "https://gentleway.ink/#gokyo", "name": "Gokyo no Waza",
+      "numberOfItems": 40, "itemListOrder": "ItemListOrderAscending",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1,  "name": "Deashi Harai", "url": "https://gentleway.ink/throws/deashi-harai" },
+        { "@type": "ListItem", "position": 14, "name": "Tai Otoshi",   "url": "https://gentleway.ink/throws/tai-otoshi" },
+        { "@type": "ListItem", "position": 40, "name": "Yoko Gake",    "url": "https://gentleway.ink/throws/yoko-gake" }
+      ] }
+  ]
+}</code></pre>
+
+<h3>Server HTML head on <code>/throws/tai-otoshi</code></h3>
+<p>From <code>samples/tai-otoshi_head.html</code>. Title carries the <code>&middot; Gentle Way</code> suffix from <code>app.vue</code>'s template; description is whole sentences of the mechanic, &le;155 chars (all 40 checked); OG image is the per-throw JPEG; canonical has no trailing slash.</p>
+<pre><code>&lt;title&gt;Tai Otoshi (体落) &middot; Body Drop &middot; Gentle Way&lt;/title&gt;
+&lt;link rel="canonical" href="https://gentleway.ink/throws/tai-otoshi"&gt;
+&lt;meta name="description" content="Tori blocks uke's shin with an outstretched leg, a low bar across the ankle, and hurls uke's upper body forward and down past it."&gt;
+&lt;meta property="og:title" content="Tai Otoshi (体落) &middot; Body Drop"&gt;
+&lt;meta property="og:url" content="https://gentleway.ink/throws/tai-otoshi"&gt;
+&lt;meta property="og:image" content="https://gentleway.ink/og/tai-otoshi.jpg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:alt" content="Tai Otoshi: the throw and its everyday analogy"&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;</code></pre>
+
+<h3>JSON-LD on a throw page</h3>
+<p>From <code>samples/tai-otoshi_ld.json</code>: a <code>WebPage</code> with <code>primaryImageOfPage</code> and two <code>ImageObject</code>s (throw + analogy), each credited to Monument Labs via the global Organization id. The second ImageObject is identical in shape with the analogy URL and caption "Dog bolts at the low bench: the everyday analogy for Tai Otoshi".</p>
+<pre><code>{ "@type": "WebPage",
+  "@id": "https://gentleway.ink/throws/tai-otoshi", "url": "https://gentleway.ink/throws/tai-otoshi",
+  "name": "Tai Otoshi (体落) &middot; Body Drop",
+  "description": "Tori blocks uke's shin with an outstretched leg, a low bar across the ankle, and hurls uke's upper body forward and down past it.",
+  "isPartOf": { "@id": "https://gentleway.ink/#website" }, "datePublished": "2026-08-22",
+  "primaryImageOfPage": {
+    "@type": "ImageObject", "contentUrl": "https://gentleway.ink/img/throws/tai-otoshi-lg.webp",
+    "width": 1024, "height": 1024,
+    "caption": "Tai Otoshi (Body Drop), sumi-e ink drawing of the judo throw",
+    "creator": { "@id": "https://monumentlabs.io/#org" }, "creditText": "Monument Labs",
+    "description": "AI-generated sumi-e rendering" },
+  "image": [ "...the same ImageObject", "...the analogy ImageObject (img/analogies/tai-otoshi-lg.webp)" ],
+  "about": { "@type": "Thing", "name": "Tai Otoshi", "alternateName": ["体落", "Body Drop"],
+             "description": "Tori blocks uke's shin ... so uke pitches straight over." },
+  "publisher": { "@id": "https://monumentlabs.io/#org" }, "creator": { "@id": "https://monumentlabs.io/#org" },
+  "inLanguage": "en" }</code></pre>
+
+<h3>Sitemap and status codes</h3>
+<p><code>samples/sitemap.xml</code> as served by the Nitro preview: <strong>41 <code>&lt;url&gt;</code></strong> (<code>/</code> + 40 throws), <strong>160 <code>&lt;image:image&gt;</code></strong> (80 on <code>/</code> from the grid, 2 per throw page), no trailing-slash variants, no <code>&lt;lastmod&gt;</code>. Table from <code>samples/curl_status.txt</code>:</p>
+<pre><code>Local Nitro preview (node .output/server/index.mjs, 2026-08-21)
+/                         200 text/html
+/sitemap.xml              200 text/xml (41 &lt;url&gt;, 160 &lt;image:image&gt;: 80 on /, 2 per throw page)
+/robots.txt               200 text/plain
+/llms.txt                 200 text/plain
+/site.webmanifest         200 application/manifest+json
+/og/tai-otoshi.jpg        200 image/jpeg
+/og-image.png             200 image/png
+/throws/tai-otoshi        200 text/html
+/throws/tai-otoshi/       200 (no-slash redirect is vercel.json trailingSlash:false, not Nitro)
+/throws/nope              404 (JSON body without Accept: text/html; HTML error page with it,
+                               title "Throw not found &middot; Gentle Way", robots noindex)</code></pre>
+<p>Also checked: zero em dashes across all 41 prerendered pages; the throw page's <code>mechanic</code> text sits under <code>&lt;h2&gt;Mechanic&lt;/h2&gt;</code> in the server HTML.</p>
+
+<h3>Browser (Playwright against <code>npm run dev</code>, Chromium 1280 and 390 wide)</h3>
+
+<figure>
+  <img src="screenshots/sprint2_index_desktop.webp" style="max-width:100%" alt="Index page, desktop">
+  <figcaption><strong>/ at 1280.</strong> The new brand row (belt-knot mark + "Gentle Way" wordmark, linked home) and the etymology line "柔道 &middot; JŪDŌ &middot; THE GENTLE WAY" sit above the unchanged poster title 五教の技 / Gokyo no Waza, tagline, seal dot and the first kyo's cards. Index server HTML carries the same brand row and etymology line.</figcaption>
+</figure>
+
+<figure>
+  <img src="screenshots/sprint2_index_footer.webp" style="max-width:100%" alt="Index page footer">
+  <figcaption><strong>/ footer.</strong> The provenance sentence is byte-identical to before; beneath it the new "Built by Monument Labs &middot; Source on GitHub" links in the page's underline style. Shared <code>AppFooter</code> renders the same on throw pages.</figcaption>
+</figure>
+
+<figure>
+  <img src="screenshots/sprint2_index_modal.webp" style="max-width:100%" alt="Tai Otoshi modal over the grid">
+  <figcaption><strong>Plain click on the Tai Otoshi card.</strong> The modal opens and the URL stays <code>/</code>: the card is now an <code>&lt;a href="/throws/tai-otoshi"&gt;</code> for crawlers and modifier clicks, but a plain click still flips / opens as before. The modal's footer "Open page &rarr;" link (below the fold here) navigates to the throw page.</figcaption>
+</figure>
+
+<figure>
+  <img src="screenshots/sprint2_throw_desktop.webp" style="max-width:100%" alt="/throws/tai-otoshi, desktop">
+  <figcaption><strong>/throws/tai-otoshi at 1280.</strong> Mark + wordmark back link top-left, "All forty throws" top-right, 第二教 &middot; DAI NIKYO group line, h1 "Tai Otoshi 体落" with BODY DROP, the 1024&sup2; pair side by side with captions "The throw" / "Dog bolts at the low bench", then Mechanic / Analogy / Why it maps as plain prose (the SEO payload), prev/next "&larr; Okuri Ashi Harai" / "Harai Goshi &rarr;", and the shared footer. Prev/next wrap was checked at both ends (deashi-harai prev &rarr; yoko-gake, yoko-gake next &rarr; deashi-harai).</figcaption>
+</figure>
+
+<figure class="mobile">
+  <img src="screenshots/sprint2_throw_mobile.webp" style="max-width:100%" alt="/throws/tai-otoshi, mobile">
+  <figcaption><strong>/throws/tai-otoshi at 390.</strong> The pair stacks, prose and prev/next remain readable, nothing overflows.</figcaption>
+</figure>
+
+<figure>
+  <img src="screenshots/sprint2_error_404.webp" style="max-width:100%" alt="Styled 404 page">
+  <figcaption><strong>/throws/nope.</strong> The styled <code>error.vue</code> on paper: mark + wordmark, status "404", h1 "Throw not found", one sentence, "Back to the poster" link. Title "Throw not found &middot; Gentle Way", <code>robots: noindex</code>. The green Nuxt devtools overlay bottom-right is dev-only.</figcaption>
+</figure>
+
+<h2>Sprint 3: List Gentle Way on monumentlabs.io <span class="status ok">Complete with deviations</span></h2>
+<p>In <code>~/Programming/Workspace/MonumentLabsSite</code> (separate repo, separate commit, also gated on Kyle's go): a seventh product tile, a <code>makesOffer</code> Product node with the byte-identical tagline, a footer link, the clipart <code>product-gentleway.webp</code>, and <code>"@id": "https://monumentlabs.io/#org"</code> on the Organization node so Gentle Way's and Clean Markdown's references resolve. Typecheck and lint green (one pre-existing error inside <code>node_modules/@nuxt/image</code>, unrelated). Verified with headless Playwright against the dev server on :3080; <code>makesOffer</code> count = tile count = 7.</p>
+
+<p>Tail of <code>samples/monumentlabs_jsonld.json</code> (the <code>/</code> <code>@graph</code>):</p>
+<pre><code>{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://monumentlabs.io/#org",
+  "name": "Monument Labs", "url": "https://monumentlabs.io",
+  "description": "Monument Labs is a product studio in Richmond, Virginia. We build and operate our own AI products.",
+  ...
+  "makesOffer": [
+    { "@type": "Product", "name": "Margin", ... },
+    ... Daylight Legal, Riff, Call Compass, Clean Markdown, Camera Shy ...
+    { "@type": "Product", "name": "Gentle Way",
+      "description": "The forty throws of Kodokan judo, and the everyday physics that explain them.",
+      "url": "https://gentleway.ink" }
+  ] }</code></pre>
+
+<div class="pair">
+  <figure>
+    <img src="screenshots/sprint3_ml_tiles_light.webp" style="max-width:100%" alt="Monument Labs products section, light">
+    <figcaption><strong>Products section, light.</strong> Gentle Way is the seventh tile (GENTLEWAY.INK, tagline, Visit link) with the statue-group clipart in the house black-line style; the 2-column grid leaves it as the accepted orphan.</figcaption>
+  </figure>
+  <figure>
+    <img src="screenshots/sprint3_ml_tiles_dark.webp" style="max-width:100%" alt="Monument Labs products section, dark">
+    <figcaption><strong>Products section, dark.</strong> The same tile with the clipart inverted by the tile's <code>dark:invert</code>; line weight holds up against the other six.</figcaption>
+  </figure>
+</div>
+
+<figure>
+  <img src="screenshots/sprint3_ml_footer.webp" style="max-width:100%" alt="Monument Labs footer">
+  <figcaption><strong>Footer "Our Products".</strong> "Gentle Way" appended as the seventh external link (opens in a new tab like its siblings).</figcaption>
+</figure>
+
+<h2>Sprint 4: Launch checks, docs sync, verification artifact <span class="status pend">Pending prod deploy / DNS</span></h2>
+<p>Docs (4.5) and this artifact (4.7) are done. The production checks need the push and the DNS cutover; they will be verified and appended here:</p>
+<ul class="checks">
+  <li class="todo">4.1 <code>dig +short gentleway.ink</code> &rarr; <code>216.150.1.1</code>; <code>www</code> &rarr; the Vercel CNAME; <code>vercel domains inspect gentleway.ink</code> configured; cert issued; <code>curl -I https://www.gentleway.ink</code> 308 &rarr; apex; <code>curl -I https://gokyo-poster.vercel.app</code> 308 &rarr; gentleway.ink (or note the canonical-only fallback if Vercel ignores <code>vercel.json</code> alongside the Nitro build output); <code>/throws/tai-otoshi/</code> 308 &rarr; no slash.</li>
+  <li class="todo">4.2 Prod crawl: every <code>&lt;loc&gt;</code> in <code>https://gentleway.ink/sitemap.xml</code> returns 200 (41); <code>robots.txt</code>, <code>llms.txt</code>, <code>og-image.png</code>, one <code>/og/*.jpg</code> all 200.</li>
+  <li class="todo">4.3 Validators: Google Rich Results Test + Schema.org validator on <code>/</code> and <code>/throws/tai-otoshi</code> with no errors; LinkedIn Post Inspector / opengraph.xyz render the house card and a per-throw JPEG; Lighthouse mobile SEO &ge; 95 on both routes, throw-page LCP noted. Screenshots to be added under <code>screenshots/sprint4_*</code>.</li>
+  <li class="todo">4.4 Kyle: GSC Domain property verified, sitemap submitted, indexing requested on <code>/</code> and 2 to 3 throw pages.</li>
+  <li>4.5 Docs: root <code>README.md</code> ("The site" + <code>internal_docs</code> bullet), plan <code>README.md</code>, <code>~/claude-ops/monument/projects/gentle-way/STATE.md</code>, <code>~/.claude/CLAUDE.md</code> row, <code>~/claude-ops/conventions/project_bootstrap.md</code> SEO note. <code>src/README.md</code> was rewritten in Sprint 2 (2.15).</li>
+  <li class="todo">4.6 Optional: rename Vercel project / GitHub repo (Kyle's call, not required).</li>
+  <li>4.7 This page + <code>screenshots/</code> + <code>samples/</code>.</li>
+</ul>
+
+<h2>End-to-end run-through</h2>
+<p>The golden path a visitor (or a crawler) takes, in order. Each step is proven by the screenshot named.</p>
+<ol>
+  <li><strong>Shared link renders the OG card</strong> (<code>sprint1_og_card</code>): mark, wordmark, tagline, <code>gentleway.ink</code>, Monument Labs credit.</li>
+  <li><strong>Land on <code>/</code></strong> (<code>sprint2_index_desktop</code>): brand row, etymology line, the poster title and grid; head carries canonical, OG, four icon links, JSON-LD with the 40-item <code>ItemList</code>.</li>
+  <li><strong>Click a card</strong> (<code>sprint2_index_modal</code>): the modal opens, URL stays <code>/</code>; the card is an <code>&lt;a&gt;</code> so cmd-click and crawlers get the page.</li>
+  <li><strong>Modal "Open page &rarr;"</strong> navigates to <code>/throws/tai-otoshi</code>.</li>
+  <li><strong>Throw page, desktop and mobile</strong> (<code>sprint2_throw_desktop</code>, <code>sprint2_throw_mobile</code>): pair + Mechanic / Analogy / Why it maps in server HTML, per-throw OG JPEG and <code>WebPage</code> JSON-LD in the head, prev/next wrap around the Gokyo.</li>
+  <li><strong>Bad URL</strong> (<code>sprint2_error_404</code>): styled 404 on paper, <code>noindex</code>, link back to the poster.</li>
+  <li><strong>Back on monumentlabs.io</strong> (<code>sprint3_ml_tiles_light</code>, <code>sprint3_ml_footer</code>): the product tile and footer link point at <code>gentleway.ink</code>; the Organization <code>@id</code> the poster's JSON-LD references now exists.</li>
+</ol>
+<p class="note">Not exercised in the browser: cmd-click on a card (modifier clicks are let through to the browser in <code>ThrowCard.onClick</code>; same code path as any <code>&lt;a href&gt;</code>) and mobile tap-to-flip (desktop Chromium reports <code>hover: hover</code> even at 390 px; the logic is unchanged from before this work).</p>
+
+<h2>Gotchas / deviations</h2>
+<p>Routine calls made during execution, collected from each sprint's Deviations block in the plan.</p>
+<ul>
+  <li><strong>OG tagline (S1):</strong> the long tagline auto-wrapped to two lines with an orphan "them.", so the card uses the short one, "Forty judo throws, explained with everyday physics." The long tagline is unchanged everywhere else (<code>llms.txt</code>, the poster, the ML tile).</li>
+  <li><strong><code>favicon.ico</code> (S1):</strong> overwrote the starter icon (16/32/48). Mark sits slightly below optical center at 512 but inside the maskable safe zone; SVG untouched.</li>
+  <li><strong><code>SITE.description</code> (S2):</strong> trimmed from the plan's 168-char draft to 160 chars. <code>site.webmanifest</code> and <code>llms.txt</code> were then brought in line; all three carry the same string now (checked 2026-08-21).</li>
+  <li><strong><code>ThrowCard</code> is a plain <code>&lt;a&gt;</code>, not <code>NuxtLink</code> (S2):</strong> <code>NuxtLink</code>'s own click handler SPA-navigated before a child <code>@click.prevent</code> could stop it (seen in the browser). The handler lets modifier / non-left clicks through and <code>preventDefault</code>s plain clicks, so flip / modal behavior is preserved. Server HTML is identical to what <code>NuxtLink</code> would emit.</li>
+  <li><strong>Lint reflow (S2):</strong> <code>eslint --fix</code> reordered <code>nuxt.config.ts</code> keys and put <code>AppLogo.vue</code> attributes one per line; a pre-existing <code>max-statements-per-line</code> error in <code>scripts/build-images.mjs</code> was fixed. No behavior change.</li>
+  <li><strong><code>build-og.mjs</code> (S2):</strong> each 540&sup2; image also gets a 2 px <code>#e5dfd4</code> frame to match the poster's card borders (the plan only named the rule between). JPEGs are 43 to 71 KB, under the estimate.</li>
+  <li><strong>Throw meta descriptions (S2):</strong> whole sentences from <code>mechanic</code> while &le;155 chars; 15 throws whose first sentence runs longer are cut at a word boundary with an ellipsis.</li>
+  <li><strong><code>error.vue</code> (S2):</strong> uses <code>titleTemplate</code> itself since <code>app.vue</code> is not rendered on the error route; shows a small status line above the h1, one sentence, "Back to the poster".</li>
+  <li><strong>Throw page extras (S2):</strong> an "All forty throws" text link top-right beside the mark (both go to <code>/</code>), and the content is wrapped in <code>&lt;main&gt;</code> (sitemap image discovery + plain semantics).</li>
+  <li><strong>Dependency versions (S2):</strong> <code>@nuxtjs/sitemap</code> ^8.5.0 (plan said ^8.3.4) and <code>@vercel/analytics</code> ^2.0.1. Dev logs "Debug mode" for analytics; production needs Kyle's dashboard toggle.</li>
+  <li><strong>Footer extraction (S2):</strong> provenance sentence byte-identical; the old lone GitHub link became "Source on GitHub" next to "Built by Monument Labs".</li>
+  <li><strong>Clipart prompts (S3):</strong> the first two ("two wrestlers mid-throw", relief stele + statue group) were rejected by the OpenAI image safety filter (<code>sexual</code>, 2 &times; 400). Rephrased to "two fully robed figures in belted tunics ... judo hip throw"; both generated. Kept both PNGs and both <code>variants.mjs</code> entries (a/b precedent); shipped <strong>b</strong>, the statue group on a round plinth, because the relief's figures are too small inside the 5/3 tile crop.</li>
+  <li><strong>Site copy (S3, task 3.6 done):</strong> the four site / OG / Organization / WebSite descriptions on monumentlabs.io now end "...We build and operate our own AI products." and the <code>keywords</code> meta no longer enumerates four product names.</li>
+  <li><strong>Not committed (S2, S3):</strong> both repos' changes are in the working tree only, gated on Kyle's go. Kyle's long-running ML dev server on :3080 was reused for verification and left running.</li>
+  <li><strong>Trailing-slash redirect:</strong> the local Nitro preview serves <code>/throws/tai-otoshi/</code> as 200; the 308 to the no-slash URL comes from <code>vercel.json</code> <code>trailingSlash: false</code> and can only be confirmed on Vercel (Sprint 4.1).</li>
+</ul>
+
+</main>
+</body>
+</html>

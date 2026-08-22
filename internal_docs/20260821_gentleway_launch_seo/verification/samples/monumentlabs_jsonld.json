@@ -1,0 +1,120 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://monumentlabs.io/#org",
+    "name": "Monument Labs",
+    "url": "https://monumentlabs.io",
+    "logo": "https://www.monumentlabs.io/og-image-monument.png",
+    "description": "Monument Labs is a product studio in Richmond, Virginia. We build and operate our own AI products.",
+    "founder": {
+      "@type": "Person",
+      "name": "Kyle Johnson",
+      "jobTitle": "Founder",
+      "alumniOf": [
+        "Meta",
+        "FAIR",
+        "Columbia University",
+        "United States Marine Corps"
+      ],
+      "knowsAbout": [
+        "Product Development",
+        "AI Agent Development",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Process Automation"
+      ]
+    },
+    "foundingDate": "2025",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Richmond",
+        "addressRegion": "VA",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Richmond"
+      },
+      {
+        "@type": "State",
+        "name": "Virginia"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/106072838"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Product",
+        "name": "Margin",
+        "description": "Cloud notebooks and connected reports. A data-science workbench for analysts who ship findings, not just publish notebooks.",
+        "url": "https://marginfordata.com"
+      },
+      {
+        "@type": "Product",
+        "name": "Daylight Legal",
+        "description": "Voice-first custody journal that builds court-ready PDFs for parents in family court.",
+        "url": "https://daylight.legal"
+      },
+      {
+        "@type": "Product",
+        "name": "Riff",
+        "description": "AI customer-interview vault. Turn founder discovery calls into searchable insights.",
+        "url": "https://riffinsights.com"
+      },
+      {
+        "@type": "Product",
+        "name": "Call Compass",
+        "description": "AI call QA. Score 100% of calls against your rubric, focus humans on coaching.",
+        "url": "https://callcompass.io"
+      },
+      {
+        "@type": "Product",
+        "name": "Clean Markdown",
+        "description": "A free, private markdown editor in your browser. WYSIWYG writing, export to PDF, Word, or HTML. No account, nothing uploaded.",
+        "url": "https://www.cleanmarkdown.tools"
+      },
+      {
+        "@type": "Product",
+        "name": "Camera Shy",
+        "description": "An AI interviewer that turns one on-camera conversation into a week of clips. No script, no teleprompter, just your own words cut and captioned.",
+        "url": "https://camerashy.app"
+      },
+      {
+        "@type": "Product",
+        "name": "Gentle Way",
+        "description": "The forty throws of Kodokan judo, and the everyday physics that explain them.",
+        "url": "https://gentleway.ink"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Monument Labs",
+    "alternateName": [
+      "Monument Labs RVA",
+      "ML Richmond"
+    ],
+    "url": "https://www.monumentlabs.io",
+    "description": "Monument Labs is a product studio in Richmond, Virginia. We build and operate our own AI products.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.monumentlabs.io/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+]

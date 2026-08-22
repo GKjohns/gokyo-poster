@@ -12,17 +12,22 @@ The canonical example: **Tai Otoshi** feels like having a rock tied around your 
 - `images/throws/`, `images/analogies/` — the generated pairs, one per technique
 - `scripts/` — generation tooling: `generate.mjs` / `batch.mjs` for production images, `candidates.mjs` / `candidates-page.mjs` / `promote.mjs` for review rounds (see **[GENERATING.md](GENERATING.md)** for the full methodology: models, endpoints, reference-photo sourcing, safety workarounds, costs)
 - `internal_docs/` — review rounds (video feedback, candidate manifests, QA notes)
+- `internal_docs/20260821_gentleway_launch_seo/` — the Gentle Way launch: implementation plan, logo gallery, verification artifact
 - `build.mjs` — merges the data and generates `index.html`
 - `index.html` — review page: every throw's image pair + analogy text side by side
 - `styles.html` / `batch.html` — the style bake-off and the 5-throw pilot that picked the config
 
 ## The site
 
-`src/` is the poster itself — a Nuxt 4 + Nuxt UI app (started from the official
+`src/` is the poster itself, shipped as **Gentle Way** at [gentleway.ink](https://gentleway.ink)
+(a Monument Labs product). It is a Nuxt 4 + Nuxt UI app (started from the official
 `nuxt-ui-templates/starter`): paper-white gallery page, five kyo sections, 40 cards.
 Hover a card and the throw crossfades into its analogy; click for the pair
 side-by-side with the mechanic, the analogy, and why it maps. Touch devices flip
-on first tap, open on second.
+on first tap, open on second. Every throw also has its own page at `/throws/[id]`
+(e.g. `/throws/tai-otoshi`) so the prose is indexable; `/` and the 40 pages are
+prerendered, with a sitemap, robots.txt, llms.txt and OG cards. Launch plan and
+verification: `internal_docs/20260821_gentleway_launch_seo/`.
 
 ```
 cd src && npm install && npm run dev
@@ -30,6 +35,7 @@ cd src && npm install && npm run dev
 
 - `npm run data` — re-merge `../data/*.json` into `app/assets/gokyo.json` after editing analogies
 - `npm run images` — regenerate 640/1024px webp derivatives in `public/img/` from `../images/` (skips existing; delete a webp to redo it)
+- `npm run og` — regenerate the per-throw 1200×630 share cards in `public/og/{id}.jpg` (throw + analogy side by side)
 
 ## Review pages (pre-site artifacts)
 

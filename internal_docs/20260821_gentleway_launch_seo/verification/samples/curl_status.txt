@@ -1,0 +1,11 @@
+Local Nitro preview (node .output/server/index.mjs, 2026-08-21)
+/                         200 text/html
+/sitemap.xml              200 text/xml (41 <url>, 160 <image:image>: 80 on /, 2 per throw page)
+/robots.txt               200 text/plain
+/llms.txt                 200 text/plain
+/site.webmanifest         200 application/manifest+json
+/og/tai-otoshi.jpg        200 image/jpeg
+/og-image.png             200 image/png
+/throws/tai-otoshi        200 text/html
+/throws/tai-otoshi/       200 (no-slash redirect is vercel.json trailingSlash:false, not Nitro)
+/throws/nope              404 (JSON body without Accept: text/html; HTML error page with it, title "Throw not found · Gentle Way", robots noindex)

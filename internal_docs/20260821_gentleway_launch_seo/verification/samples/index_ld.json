@@ -1,0 +1,313 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://monumentlabs.io/#org",
+      "name": "Monument Labs",
+      "url": "https://monumentlabs.io",
+      "logo": "https://www.monumentlabs.io/og-image-monument.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/106072838"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gentleway.ink/#website",
+      "url": "https://gentleway.ink",
+      "name": "Gentle Way",
+      "description": "An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click.",
+      "publisher": {
+        "@id": "https://monumentlabs.io/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://gentleway.ink/#app",
+      "name": "Gentle Way",
+      "url": "https://gentleway.ink",
+      "applicationCategory": "EducationalApplication",
+      "applicationSubCategory": "Interactive poster",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://gentleway.ink/og-image.png",
+      "description": "An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click.",
+      "datePublished": "2026-08-22",
+      "about": {
+        "@type": "Thing",
+        "name": "Gokyo no Waza",
+        "alternateName": "五教の技",
+        "sameAs": "https://en.wikipedia.org/wiki/Gokyo_(judo)"
+      },
+      "featureList": [
+        "All forty throws of the 1920 Kodokan Gokyo in canonical order",
+        "A sumi-e ink rendering of every throw",
+        "An everyday scene paired with each throw to show the mechanics",
+        "Mechanic, analogy and why-it-maps notes for every throw",
+        "Free, no account, works on phone and desktop"
+      ],
+      "publisher": {
+        "@id": "https://monumentlabs.io/#org"
+      },
+      "creator": {
+        "@id": "https://monumentlabs.io/#org"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://gentleway.ink/#gokyo",
+      "name": "Gokyo no Waza",
+      "numberOfItems": 40,
+      "itemListOrder": "ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Deashi Harai",
+          "url": "https://gentleway.ink/throws/deashi-harai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hiza Guruma",
+          "url": "https://gentleway.ink/throws/hiza-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sasae Tsurikomi Ashi",
+          "url": "https://gentleway.ink/throws/sasae-tsurikomi-ashi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Uki Goshi",
+          "url": "https://gentleway.ink/throws/uki-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Osoto Gari",
+          "url": "https://gentleway.ink/throws/osoto-gari"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "O Goshi",
+          "url": "https://gentleway.ink/throws/o-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Ouchi Gari",
+          "url": "https://gentleway.ink/throws/ouchi-gari"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Seoi Nage",
+          "url": "https://gentleway.ink/throws/seoi-nage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Kosoto Gari",
+          "url": "https://gentleway.ink/throws/kosoto-gari"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Kouchi Gari",
+          "url": "https://gentleway.ink/throws/kouchi-gari"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Koshi Guruma",
+          "url": "https://gentleway.ink/throws/koshi-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Tsurikomi Goshi",
+          "url": "https://gentleway.ink/throws/tsurikomi-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Okuri Ashi Harai",
+          "url": "https://gentleway.ink/throws/okuri-ashi-harai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Tai Otoshi",
+          "url": "https://gentleway.ink/throws/tai-otoshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Harai Goshi",
+          "url": "https://gentleway.ink/throws/harai-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Uchi Mata",
+          "url": "https://gentleway.ink/throws/uchi-mata"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Kosoto Gake",
+          "url": "https://gentleway.ink/throws/kosoto-gake"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Tsuri Goshi",
+          "url": "https://gentleway.ink/throws/tsuri-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Yoko Otoshi",
+          "url": "https://gentleway.ink/throws/yoko-otoshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Ashi Guruma",
+          "url": "https://gentleway.ink/throws/ashi-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Hane Goshi",
+          "url": "https://gentleway.ink/throws/hane-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Harai Tsurikomi Ashi",
+          "url": "https://gentleway.ink/throws/harai-tsurikomi-ashi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Tomoe Nage",
+          "url": "https://gentleway.ink/throws/tomoe-nage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Kata Guruma",
+          "url": "https://gentleway.ink/throws/kata-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "Sumi Gaeshi",
+          "url": "https://gentleway.ink/throws/sumi-gaeshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Tani Otoshi",
+          "url": "https://gentleway.ink/throws/tani-otoshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "Hane Makikomi",
+          "url": "https://gentleway.ink/throws/hane-makikomi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "Sukui Nage",
+          "url": "https://gentleway.ink/throws/sukui-nage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "Utsuri Goshi",
+          "url": "https://gentleway.ink/throws/utsuri-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "name": "O Guruma",
+          "url": "https://gentleway.ink/throws/o-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "name": "Soto Makikomi",
+          "url": "https://gentleway.ink/throws/soto-makikomi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "name": "Uki Otoshi",
+          "url": "https://gentleway.ink/throws/uki-otoshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "name": "Osoto Guruma",
+          "url": "https://gentleway.ink/throws/osoto-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "name": "Uki Waza",
+          "url": "https://gentleway.ink/throws/uki-waza"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "name": "Yoko Wakare",
+          "url": "https://gentleway.ink/throws/yoko-wakare"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "name": "Yoko Guruma",
+          "url": "https://gentleway.ink/throws/yoko-guruma"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "name": "Ushiro Goshi",
+          "url": "https://gentleway.ink/throws/ushiro-goshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "name": "Ura Nage",
+          "url": "https://gentleway.ink/throws/ura-nage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "name": "Sumi Otoshi",
+          "url": "https://gentleway.ink/throws/sumi-otoshi"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "name": "Yoko Gake",
+          "url": "https://gentleway.ink/throws/yoko-gake"
+        }
+      ]
+    }
+  ]
+}
