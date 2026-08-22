@@ -1,0 +1,13 @@
+<!--
+  Gentle Way mark — the belt knot.
+  Judo = 柔道, "the gentle way"; the one object every judoka ties before stepping on the mat
+  is the obi. Reduced to four primitives: the band across, the square knot, two tails hanging
+  from under it. Single ink fill (#1c1a17, a black belt). Radii kept small so the corners read
+  as brush-cut rather than pill-shaped.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="4" y="24" width="56" height="12" rx="1" fill="#1c1a17"/>
+  <rect x="24" y="20" width="16" height="20" rx="1.25" fill="#1c1a17"/>
+  <rect x="22" y="36" width="9" height="22" rx="1" fill="#1c1a17" transform="rotate(14 27 38)"/>
+  <rect x="33" y="36" width="9" height="22" rx="1" fill="#1c1a17" transform="rotate(-14 37 38)"/>
+</svg>

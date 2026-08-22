@@ -1,0 +1,19 @@
+# Gentle Way
+
+> An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click.
+
+The Gokyo no Waza is the Kodokan's 1920 syllabus of forty throwing techniques, arranged in five groups (kyo) of eight. Gentle Way shows all forty as a single poster: each throw is rendered in sumi-e ink, and each is paired with an original analogy from everyday life (stepping onto a runaway skateboard, a rock tied around your neck dropping off a cliff) written so that a child could feel the mechanics. Every throw has its own page with the throw image, the analogy image, a plain-language description of the mechanic, the analogy scene, and a short note on why the two map onto each other. The tagline: The forty throws of Kodokan judo, and the everyday physics that explain them.
+
+Gentle Way is a static site, free to use, with no login and nothing to install. It is built and operated by Monument Labs LLC, an AI consultancy and product studio in Richmond, Virginia.
+
+## Pages
+
+- [Home](https://gentleway.ink/): the full poster, forty throws in five groups, ordered as in the 1920 Kodokan Gokyo
+- [Throw pages](https://gentleway.ink/throws/tai-otoshi): one page per throw at /throws/{id}, where id is the romaji slug. Examples: https://gentleway.ink/throws/tai-otoshi, https://gentleway.ink/throws/uchi-mata, https://gentleway.ink/throws/seoi-nage
+- [Source](https://github.com/GKjohns/gokyo-poster): the GitHub repository for the site and the image pipeline
+
+## Notes
+
+- Free, no login, no account. Everything on the site is crawlable.
+- Images are AI-generated sumi-e renderings of each throw and each analogy scene, not photographs of real people.
+- The analogies and their explanations are original writing for this project. Technique names, kanji, and group order follow the Kodokan Gokyo no Waza.
