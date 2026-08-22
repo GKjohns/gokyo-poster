@@ -11,7 +11,8 @@
     "typecheck": "nuxt typecheck",
     "data": "node scripts/build-data.mjs",
     "images": "node scripts/build-images.mjs",
-    "og": "node scripts/build-og.mjs"
+    "og": "node scripts/build-og.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.122",
