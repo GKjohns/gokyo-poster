@@ -43,10 +43,10 @@
 <main>
 
 <h1>Gentle Way launch: verification</h1>
-<p class="meta">Plan: <code>internal_docs/20260821_gentleway_launch_seo/implementation_plan.md</code>. Executed 2026-08-21 against the local tree (<code>src/</code>); nothing committed or pushed yet. Sprints 0 to 3 are complete; Sprint 4's production checks wait on the push and on Kyle's DNS cutover.</p>
+<p class="meta">Plan: <code>internal_docs/20260821_gentleway_launch_seo/implementation_plan.md</code>. Sprints 0 to 3 were executed 2026-08-21 against the local tree (<code>src/</code>) and then deployed; the Sprint 4 production checks below were run the same day against <code>https://www.gentleway.ink</code> (the www host became canonical after the first deploy; see Gotchas).</p>
 
 <h2>What was built</h2>
-<p><a href="https://gentleway.ink">gentleway.ink</a> serves the Gokyo no Waza poster with the full Monument Labs product SEO package (matching Camera Shy / cosmo / Clean Markdown): a real mark (the belt knot) with the canon favicon set and a 1200&times;630 OG card; <code>site.webmanifest</code>, <code>robots.txt</code>, <code>llms.txt</code>; canonical + OG/Twitter meta + JSON-LD on every route; a sitemap with image entries; 40 per-throw pages at <code>/throws/[id]</code> so the 25k words of mechanic / analogy / why-it-maps prose are in server HTML instead of hidden in a modal; a styled 404; <code>vercel.json</code> redirects (<code>.vercel.app</code> host and trailing slashes); a brand row and a "Built by Monument Labs" footer; and a Gentle Way tile, Product node and footer link on monumentlabs.io. The 40 analogies, images, palette, fonts and the hover / flip / modal interaction are unchanged.</p>
+<p><a href="https://www.gentleway.ink">www.gentleway.ink</a> serves the Gokyo no Waza poster with the full Monument Labs product SEO package (matching Camera Shy / cosmo / Clean Markdown): a real mark (the belt knot) with the canon favicon set and a 1200&times;630 OG card; <code>site.webmanifest</code>, <code>robots.txt</code>, <code>llms.txt</code>; canonical + OG/Twitter meta + JSON-LD on every route; a sitemap with image entries; 40 per-throw pages at <code>/throws/[id]</code> so the 25k words of mechanic / analogy / why-it-maps prose are in server HTML instead of hidden in a modal; a styled 404; <code>vercel.json</code> redirects (<code>.vercel.app</code> host and trailing slashes); a brand row and a "Built by Monument Labs" footer; and a Gentle Way tile, Product node and footer link on monumentlabs.io. The 40 analogies, images, palette, fonts and the hover / flip / modal interaction are unchanged.</p>
 
 <h2>Sprint 0: Mark + Kyle's manual toggles <span class="status ok">Complete (Kyle items pending)</span></h2>
 <p>Kyle picked option 7 from the gallery (<code>../logo-options-gentleway.html</code>): the belt knot, obi reduced to band + knot + two tails, with a tighter corner radius than the gallery render, in ink <code>#1c1a17</code>. Delivered as <code>src/public/favicon.svg</code> (64&times;64 viewBox, four filled rects) and <code>src/app/components/AppLogo.vue</code> (<code>currentColor</code>, optional wordmark). The mark's legibility at tab size was checked during Sprint 0; it appears at 512 px below (Sprint 1) and in the tab-sized header row on every page (Sprint 2).</p>
@@ -237,18 +237,109 @@
   <img src="screenshots/sprint3_ml_footer.webp" style="max-width:100%" alt="Monument Labs footer">
   <figcaption><strong>Footer "Our Products".</strong> "Gentle Way" appended as the seventh external link (opens in a new tab like its siblings).</figcaption>
 </figure>
+<figure>
+  <img src="screenshots/sprint3_ml_prod_tile.webp" style="max-width:100%" alt="Gentle Way tile live on www.monumentlabs.io">
+  <figcaption><strong>Live on www.monumentlabs.io</strong> after commit <code>2d4d470</code> deployed: the Gentle Way tile renders in the products grid in production.</figcaption>
+</figure>
 
-<h2>Sprint 4: Launch checks, docs sync, verification artifact <span class="status pend">Pending prod deploy / DNS</span></h2>
-<p>Docs (4.5) and this artifact (4.7) are done. The production checks need the push and the DNS cutover; they will be verified and appended here:</p>
+<h2>Sprint 4: Launch checks, docs sync, verification artifact <span class="status ok">Complete (4.4 Kyle: GSC)</span></h2>
+<p>Production checks run 2026-08-21 against <code>https://www.gentleway.ink</code> (Vercel, after the www-canonical flip). Raw outputs: <code>samples/prod_curl_status.txt</code>, <code>samples/prod_index_ld.json</code>, <code>samples/prod_tai-otoshi_ld.json</code>, <code>samples/prod_lighthouse.txt</code>.</p>
 <ul class="checks">
-  <li class="todo">4.1 <code>dig +short gentleway.ink</code> &rarr; <code>216.150.1.1</code>; <code>www</code> &rarr; the Vercel CNAME; <code>vercel domains inspect gentleway.ink</code> configured; cert issued; <code>curl -I https://www.gentleway.ink</code> 308 &rarr; apex; <code>curl -I https://gokyo-poster.vercel.app</code> 308 &rarr; gentleway.ink (or note the canonical-only fallback if Vercel ignores <code>vercel.json</code> alongside the Nitro build output); <code>/throws/tai-otoshi/</code> 308 &rarr; no slash.</li>
-  <li class="todo">4.2 Prod crawl: every <code>&lt;loc&gt;</code> in <code>https://gentleway.ink/sitemap.xml</code> returns 200 (41); <code>robots.txt</code>, <code>llms.txt</code>, <code>og-image.png</code>, one <code>/og/*.jpg</code> all 200.</li>
-  <li class="todo">4.3 Validators: Google Rich Results Test + Schema.org validator on <code>/</code> and <code>/throws/tai-otoshi</code> with no errors; LinkedIn Post Inspector / opengraph.xyz render the house card and a per-throw JPEG; Lighthouse mobile SEO &ge; 95 on both routes, throw-page LCP noted. Screenshots to be added under <code>screenshots/sprint4_*</code>.</li>
+  <li>4.1 DNS/TLS + host redirects: cert valid on <code>www</code>; <code>gentleway.ink/</code> and <code>gokyo-poster.vercel.app/</code> both 308 &rarr; <code>https://www.gentleway.ink/</code>; <code>/throws/tai-otoshi/</code> 308 &rarr; no slash; <code>/throws/nope</code> 404.</li>
+  <li>4.2 Prod crawl: 41/41 sitemap <code>&lt;loc&gt;</code> return 200; all on the www host, no trailing slashes; 160 <code>&lt;image:image&gt;</code>; <code>robots.txt</code>, <code>llms.txt</code>, <code>site.webmanifest</code>, the icon set, <code>og-image.png</code> and <code>/og/*.jpg</code> all 200.</li>
+  <li>4.3 Validators: Schema.org 0 errors / 0 warnings on both routes; Rich Results Test 0 errors (Carousels + Software Apps on <code>/</code>, Image Metadata on the throw page; only optional-field notices); opengraph.xyz renders the house card and the tai-otoshi diptych; Lighthouse mobile SEO 100 on both routes.</li>
   <li class="todo">4.4 Kyle: GSC Domain property verified, sitemap submitted, indexing requested on <code>/</code> and 2 to 3 throw pages.</li>
   <li>4.5 Docs: root <code>README.md</code> ("The site" + <code>internal_docs</code> bullet), plan <code>README.md</code>, <code>~/claude-ops/monument/projects/gentle-way/STATE.md</code>, <code>~/.claude/CLAUDE.md</code> row, <code>~/claude-ops/conventions/project_bootstrap.md</code> SEO note. <code>src/README.md</code> was rewritten in Sprint 2 (2.15).</li>
   <li class="todo">4.6 Optional: rename Vercel project / GitHub repo (Kyle's call, not required).</li>
   <li>4.7 This page + <code>screenshots/</code> + <code>samples/</code>.</li>
 </ul>
+
+<h3>4.1 Host, redirects, status codes (curl)</h3>
+<table>
+  <tr><th>Request</th><th>Result</th></tr>
+  <tr><td><code>https://gentleway.ink/</code></td><td>308 &rarr; <code>https://www.gentleway.ink/</code></td></tr>
+  <tr><td><code>https://gokyo-poster.vercel.app/</code></td><td>308 &rarr; <code>https://www.gentleway.ink/</code> (<code>vercel.json</code> host redirect works alongside the Nitro output)</td></tr>
+  <tr><td><code>https://gentleway.ink/throws/tai-otoshi</code></td><td>308 &rarr; <code>https://www.gentleway.ink/throws/tai-otoshi</code></td></tr>
+  <tr><td><code>https://www.gentleway.ink/throws/tai-otoshi/</code></td><td>308 &rarr; no trailing slash (<code>trailingSlash: false</code> confirmed on Vercel)</td></tr>
+  <tr><td><code>/</code>, <code>/throws/tai-otoshi</code></td><td>200 <code>text/html</code></td></tr>
+  <tr><td><code>/throws/nope</code></td><td>404</td></tr>
+  <tr><td><code>/sitemap.xml</code>, <code>/robots.txt</code>, <code>/llms.txt</code>, <code>/site.webmanifest</code></td><td>200 (xml / text / text / <code>application/manifest+json</code>)</td></tr>
+  <tr><td><code>/favicon.svg</code>, <code>/favicon.ico</code>, <code>/apple-touch-icon.png</code>, <code>/icon-192-maskable.png</code>, <code>/icon-512-maskable.png</code></td><td>200</td></tr>
+  <tr><td><code>/og-image.png</code>, <code>/og/uchi-mata.jpg</code>, <code>/og/tai-otoshi.jpg</code></td><td>200 (png / jpeg / jpeg)</td></tr>
+</table>
+
+<h3>4.2 Sitemap crawl</h3>
+<table>
+  <tr><th>Check</th><th>Result</th></tr>
+  <tr><td><code>&lt;loc&gt;</code> entries</td><td>41 (<code>/</code> + 40 throw pages)</td></tr>
+  <tr><td>Each <code>&lt;loc&gt;</code> fetched</td><td>41/41 HTTP 200</td></tr>
+  <tr><td>Host / trailing slash</td><td>41/41 start with <code>https://www.gentleway.ink</code>; 0 trailing slashes (root is <code>https://www.gentleway.ink/</code>)</td></tr>
+  <tr><td><code>&lt;image:image&gt;</code> entries</td><td>160 (80 on <code>/</code>, 2 per throw page), all <code>image:loc</code> on the www host</td></tr>
+</table>
+
+<h3>Server HTML on prod (curl, not browser)</h3>
+<table>
+  <tr><th>Check</th><th><code>/</code></th><th><code>/throws/tai-otoshi</code></th></tr>
+  <tr><td><code>&lt;link rel="canonical"&gt;</code></td><td><code>https://www.gentleway.ink</code></td><td><code>https://www.gentleway.ink/throws/tai-otoshi</code></td></tr>
+  <tr><td><code>meta name="description"</code> count</td><td>1 (160 chars)</td><td>1 (129 chars, first sentences of the Mechanic)</td></tr>
+  <tr><td><code>og:image</code> / <code>og:url</code></td><td><code>https://www.gentleway.ink/og-image.png</code> / <code>https://www.gentleway.ink</code></td><td><code>https://www.gentleway.ink/og/tai-otoshi.jpg</code> / <code>.../throws/tai-otoshi</code></td></tr>
+  <tr><td>JSON-LD parses (<code>JSON.parse</code>)</td><td>yes: <code>Organization</code>, <code>WebSite</code>, <code>WebApplication</code>, <code>ItemList</code> (40 items, www URLs); 0 bare-apex references</td><td>yes: <code>WebPage</code> with two <code>ImageObject</code>s; 0 bare-apex references</td></tr>
+  <tr><td>Em dashes in HTML</td><td>0</td><td>0</td></tr>
+  <tr><td>Prose in server HTML</td><td>n/a</td><td>Mechanic / Analogy / Why it maps headings and the Mechanic paragraph ("Tori blocks uke's shin with an outstretched leg...") present</td></tr>
+</table>
+
+<h3>4.3 Validators</h3>
+<table>
+  <tr><th>Tool</th><th><code>/</code></th><th><code>/throws/tai-otoshi</code></th></tr>
+  <tr><td>Schema.org validator</td><td>0 errors, 0 warnings, 3 items (<code>ItemList</code>, <code>WebSite</code>, <code>WebApplication</code>)</td><td>0 errors, 0 warnings, 2 items (<code>WebPage</code>, <code>CreativeWork</code>)</td></tr>
+  <tr><td>Google Rich Results Test</td><td>Crawled OK; 2 valid items: Carousels (1), Software Apps (1). 0 errors; 1 non-critical notice (optional <code>aggregateRating</code> missing)</td><td>Crawled OK; 3 valid Image Metadata items. 0 errors; non-critical notices only (optional <code>license</code>, <code>copyrightNotice</code>, <code>acquireLicensePage</code>; <code>creator</code> is an <code>@id</code> reference)</td></tr>
+  <tr><td>opengraph.xyz</td><td>house card renders, 1200&times;630 PNG, 43 KB; 0 errors</td><td>tai-otoshi diptych renders, 1200&times;630 JPEG, 55 KB; 0 errors (its "meta description is short, 15 chars" warning is a parser quirk: it stops at the apostrophe in "uke's"; the served tag is 129 chars)</td></tr>
+  <tr><td>Lighthouse mobile (perf preset, headless Chrome)</td><td>SEO <strong>100</strong>, Performance 79, LCP 4.4 s, FCP 2.9 s, SI 3.6 s, TBT 30 ms, CLS 0 (a first run scored SEO 92 because the robots-txt fetch timed out inside Lighthouse; curl and the re-run both see <code>/robots.txt</code> as 200)</td><td>SEO <strong>100</strong>, Performance 92, LCP 2.9 s, FCP 2.4 s, SI 2.6 s, TBT 10 ms, CLS 0</td></tr>
+</table>
+<p class="note">Rich-result types are incidental; the target was zero errors, which both routes meet. Lighthouse's throttled LCP on <code>/</code> is the first lazy-loaded grid image; the throw page's LCP is its 1024 px sumi-e image. Browser console on prod shows one 404 for <code>/2d8f89d6acddc5f1/script.js</code>: Vercel Web Analytics is not yet toggled on in the dashboard (Kyle, Sprint 0.5), so <code>@vercel/analytics</code> logs and moves on.</p>
+
+<div class="pair">
+<figure>
+  <img src="screenshots/sprint4_schema_index.webp" alt="Schema.org validator on the home page">
+  <figcaption><strong>Schema.org validator, <code>/</code>.</strong> 0 errors, 0 warnings; ItemList, WebSite and WebApplication detected from the production HTML.</figcaption>
+</figure>
+<figure>
+  <img src="screenshots/sprint4_schema_throw.webp" alt="Schema.org validator on the tai-otoshi page">
+  <figcaption><strong>Schema.org validator, <code>/throws/tai-otoshi</code>.</strong> 0 errors, 0 warnings; WebPage plus the nested CreativeWork (ImageObject) items.</figcaption>
+</figure>
+</div>
+<div class="pair">
+<figure>
+  <img src="screenshots/sprint4_rich_results_index.webp" alt="Google Rich Results Test on the home page">
+  <figcaption><strong>Rich Results Test, <code>/</code>.</strong> Crawled successfully; Carousels and Software Apps detected as valid items, no errors.</figcaption>
+</figure>
+<figure>
+  <img src="screenshots/sprint4_rich_results_throw.webp" alt="Google Rich Results Test on the tai-otoshi page">
+  <figcaption><strong>Rich Results Test, <code>/throws/tai-otoshi</code>.</strong> Crawled successfully; three valid Image Metadata items, no errors (only optional-field notices).</figcaption>
+</figure>
+</div>
+<div class="pair">
+<figure>
+  <img src="screenshots/sprint4_og_preview_index.webp" alt="opengraph.xyz preview of the home page">
+  <figcaption><strong>OG preview, <code>/</code>.</strong> opengraph.xyz fetched the production head and renders the house card (mark, wordmark, tagline, gentleway.ink, Monument Labs credit); 0 errors in its tag inspector.</figcaption>
+</figure>
+<figure>
+  <img src="screenshots/sprint4_og_preview_throw.webp" alt="opengraph.xyz preview of the tai-otoshi page">
+  <figcaption><strong>OG preview, <code>/throws/tai-otoshi</code>.</strong> The per-throw diptych JPEG (throw + dog-and-bench analogy) renders with the "Tai Otoshi (体落) · Body Drop" title.</figcaption>
+</figure>
+</div>
+<figure>
+  <img src="screenshots/sprint4_prod_index.webp" alt="Production home page at 1280 px">
+  <figcaption><strong>Prod <code>/</code> at 1280 px.</strong> Brand row (mark + wordmark + etymology), poster title, grid. <code>document.title</code> is "Gentle Way · Gokyo no Waza, the forty throws of Kodokan judo"; the head links <code>favicon.ico</code>, <code>favicon.svg</code> and <code>apple-touch-icon.png</code>. Clicking the Tai Otoshi card opened the modal with the URL still <code>/</code>; "Open page &rarr;" navigated to <code>/throws/tai-otoshi</code>.</figcaption>
+</figure>
+<figure>
+  <img src="screenshots/sprint4_prod_index_footer.webp" alt="Production home page footer">
+  <figcaption><strong>Prod <code>/</code> footer.</strong> "Built by Monument Labs" &rarr; <code>https://monumentlabs.io/</code> and "Source on GitHub" under the provenance line.</figcaption>
+</figure>
+<figure class="mobile">
+  <img src="screenshots/sprint4_prod_throw_mobile.webp" alt="Production tai-otoshi page at 390 px, full page">
+  <figcaption><strong>Prod <code>/throws/tai-otoshi</code> at 390 px (full page).</strong> Both images load, Mechanic / Analogy / Why it maps prose, prev/next links; clicking "Harai Goshi &rarr;" landed on <code>/throws/harai-goshi</code> whose prev link points back at Tai Otoshi.</figcaption>
+</figure>
 
 <h2>End-to-end run-through</h2>
 <p>The golden path a visitor (or a crawler) takes, in order. Each step is proven by the screenshot named.</p>
@@ -280,7 +371,8 @@
   <li><strong>Clipart prompts (S3):</strong> the first two ("two wrestlers mid-throw", relief stele + statue group) were rejected by the OpenAI image safety filter (<code>sexual</code>, 2 &times; 400). Rephrased to "two fully robed figures in belted tunics ... judo hip throw"; both generated. Kept both PNGs and both <code>variants.mjs</code> entries (a/b precedent); shipped <strong>b</strong>, the statue group on a round plinth, because the relief's figures are too small inside the 5/3 tile crop.</li>
   <li><strong>Site copy (S3, task 3.6 done):</strong> the four site / OG / Organization / WebSite descriptions on monumentlabs.io now end "...We build and operate our own AI products." and the <code>keywords</code> meta no longer enumerates four product names.</li>
   <li><strong>Not committed (S2, S3):</strong> both repos' changes are in the working tree only, gated on Kyle's go. Kyle's long-running ML dev server on :3080 was reused for verification and left running.</li>
-  <li><strong>Trailing-slash redirect:</strong> the local Nitro preview serves <code>/throws/tai-otoshi/</code> as 200; the 308 to the no-slash URL comes from <code>vercel.json</code> <code>trailingSlash: false</code> and can only be confirmed on Vercel (Sprint 4.1).</li>
+  <li><strong>Trailing-slash redirect:</strong> the local Nitro preview serves <code>/throws/tai-otoshi/</code> as 200; the 308 to the no-slash URL comes from <code>vercel.json</code> <code>trailingSlash: false</code>. Confirmed on Vercel in Sprint 4.1.</li>
+  <li><strong>Canonical host flipped to www after the first deploy (S4):</strong> the plan and the first deploy made the apex canonical with <code>www</code> 308-ing to it; Kyle flagged that every other Monument Labs product is www-canonical, so Vercel was re-pointed (<code>www.gentleway.ink</code> primary, apex 308 &rarr; www) and <code>SITE.url</code>, <code>vercel.json</code>, <code>robots.txt</code>, <code>llms.txt</code>, READMEs and <code>STATE.md</code> were switched to <code>https://www.gentleway.ink</code>; canonical, og:url, sitemap and JSON-LD follow from <code>SITE.url</code>. The Sprint 2 samples under <code>samples/</code> (captured before the flip) still show the apex host; the <code>samples/prod_*</code> files are post-flip.</li>
 </ul>
 
 </main>

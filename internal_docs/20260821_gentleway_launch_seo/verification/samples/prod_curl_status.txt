@@ -1,0 +1,70 @@
+Production (https://www.gentleway.ink, Vercel), curl 2026-08-21
+
+Host / redirect checks (verified earlier this session, re-run here):
+308 -> https://www.gentleway.ink/  https://gentleway.ink/
+308 -> https://www.gentleway.ink/  https://gokyo-poster.vercel.app/
+308 -> https://www.gentleway.ink/throws/tai-otoshi  https://www.gentleway.ink/throws/tai-otoshi/
+308 -> https://www.gentleway.ink/throws/tai-otoshi  https://gentleway.ink/throws/tai-otoshi
+
+Routes and assets:
+200 text/html; charset=utf-8  /
+200 text/html; charset=utf-8  /throws/tai-otoshi
+404 application/json  /throws/nope
+200 text/xml; charset=UTF-8  /sitemap.xml
+200 text/plain; charset=utf-8  /robots.txt
+200 text/plain; charset=utf-8  /llms.txt
+200 application/manifest+json; charset=utf-8  /site.webmanifest
+200 image/svg+xml  /favicon.svg
+200 image/vnd.microsoft.icon  /favicon.ico
+200 image/png  /apple-touch-icon.png
+200 image/png  /icon-192-maskable.png
+200 image/png  /icon-512-maskable.png
+200 image/png  /og-image.png
+200 image/jpeg  /og/uchi-mata.jpg
+200 image/jpeg  /og/tai-otoshi.jpg
+
+sitemap.xml: 41 <loc> entries, all prefixed https://www.gentleway.ink, none with a trailing slash (root is https://www.gentleway.ink/); 160 <image:image> entries (80 on /, 2 per throw page), all image:loc on the www host.
+Every <loc> fetched: 41/41 returned 200.
+
+Per-loc status:
+200 text/html; charset=utf-8  https://www.gentleway.ink/
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/ashi-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/deashi-harai
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/hane-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/hane-makikomi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/harai-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/harai-tsurikomi-ashi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/hiza-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/kata-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/koshi-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/kosoto-gake
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/kosoto-gari
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/kouchi-gari
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/o-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/o-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/okuri-ashi-harai
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/osoto-gari
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/osoto-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/ouchi-gari
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/sasae-tsurikomi-ashi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/seoi-nage
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/soto-makikomi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/sukui-nage
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/sumi-gaeshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/sumi-otoshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/tai-otoshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/tani-otoshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/tomoe-nage
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/tsuri-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/tsurikomi-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/uchi-mata
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/uki-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/uki-otoshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/uki-waza
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/ura-nage
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/ushiro-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/utsuri-goshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/yoko-gake
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/yoko-guruma
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/yoko-otoshi
+200 text/html; charset=utf-8  https://www.gentleway.ink/throws/yoko-wakare

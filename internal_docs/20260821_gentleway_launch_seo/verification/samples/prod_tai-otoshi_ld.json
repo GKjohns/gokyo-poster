@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.gentleway.ink/throws/tai-otoshi",
+      "url": "https://www.gentleway.ink/throws/tai-otoshi",
+      "name": "Tai Otoshi (体落) · Body Drop",
+      "description": "Tori blocks uke's shin with an outstretched leg, a low bar across the ankle, and hurls uke's upper body forward and down past it.",
+      "isPartOf": {
+        "@id": "https://www.gentleway.ink/#website"
+      },
+      "datePublished": "2026-08-22",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https://www.gentleway.ink/img/throws/tai-otoshi-lg.webp",
+        "width": 1024,
+        "height": 1024,
+        "caption": "Tai Otoshi (Body Drop), sumi-e ink drawing of the judo throw",
+        "creator": {
+          "@id": "https://monumentlabs.io/#org"
+        },
+        "creditText": "Monument Labs",
+        "description": "AI-generated sumi-e rendering"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://www.gentleway.ink/img/throws/tai-otoshi-lg.webp",
+          "width": 1024,
+          "height": 1024,
+          "caption": "Tai Otoshi (Body Drop), sumi-e ink drawing of the judo throw",
+          "creator": {
+            "@id": "https://monumentlabs.io/#org"
+          },
+          "creditText": "Monument Labs",
+          "description": "AI-generated sumi-e rendering"
+        },
+        {
+          "@type": "ImageObject",
+          "contentUrl": "https://www.gentleway.ink/img/analogies/tai-otoshi-lg.webp",
+          "width": 1024,
+          "height": 1024,
+          "caption": "Dog bolts at the low bench: the everyday analogy for Tai Otoshi",
+          "creator": {
+            "@id": "https://monumentlabs.io/#org"
+          },
+          "creditText": "Monument Labs",
+          "description": "AI-generated sumi-e rendering"
+        }
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Tai Otoshi",
+        "alternateName": [
+          "体落",
+          "Body Drop"
+        ],
+        "description": "Tori blocks uke's shin with an outstretched leg, a low bar across the ankle, and hurls uke's upper body forward and down past it. The feet stop dead at the block while the body keeps going, so uke pitches straight over."
+      },
+      "publisher": {
+        "@id": "https://monumentlabs.io/#org"
+      },
+      "creator": {
+        "@id": "https://monumentlabs.io/#org"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}

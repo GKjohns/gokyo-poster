@@ -1,0 +1,9 @@
+Lighthouse (npx lighthouse --preset=perf --only-categories=seo,performance --form-factor=mobile --screenEmulation.mobile, headless system Chrome), production https://www.gentleway.ink, 2026-08-21
+
+/ (run 1): SEO 92 | Performance 71 | LCP 9.2 s | FCP 2.5 s | SI 3.6 s | TBT 40 ms | CLS 0 | Lighthouse 12.8.2
+  SEO audit failed: robots-txt (Lighthouse was unable to download a robots.txt file)
+/ (run 2): SEO 100 | Performance 79 | LCP 4.4 s | FCP 2.9 s | SI 3.6 s | TBT 30 ms | CLS 0 | Lighthouse 12.8.2
+/throws/tai-otoshi: SEO 100 | Performance 92 | LCP 2.9 s | FCP 2.4 s | SI 2.6 s | TBT 10 ms | CLS 0 | Lighthouse 12.8.2
+
+Run 1 on / scored SEO 92 only because the robots-txt audit reported "Lighthouse was unable to download a robots.txt file" (transient; curl and run 2 both fetch /robots.txt as 200). Run 2 is the one recorded in verification/index.html.
+LCP element on /: the first lazy-loaded grid image (/img/throws/hiza-guruma.webp); on the throw page: /img/throws/tai-otoshi-lg.webp.

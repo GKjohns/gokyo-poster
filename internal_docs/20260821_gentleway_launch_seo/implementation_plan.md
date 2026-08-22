@@ -1,7 +1,7 @@
 # Gentle Way Launch: Domain, Brand Assets, SEO Package — Implementation Plan
 
 **Created:** August 21, 2026
-**Status:** Approved by Kyle 2026-08-21. Sprints 0 (except Kyle's DNS/GSC/analytics toggles), 1, 2 and 3 complete (2 and 3 with deviations noted in-section); nothing committed or deployed yet. Sprint 4: docs (4.5) and verification artifact (4.7) done 2026-08-21; 4.1–4.4 pending prod deploy/DNS.
+**Status:** Complete. Shipped to production 2026-08-21: gokyo-poster `main` commits `1d69c08`, `8767ac2`, `e42739b` (launch) + `9f1ce74` (www-canonical fix), live at https://www.gentleway.ink; MonumentLabsSite `2d4d470` live at www.monumentlabs.io. Prod smoke 6/6 PASS (41/41 sitemap URLs 200, Schema.org 0 errors, Rich Results 0 errors, OG previews render, Lighthouse SEO 100/100). Still Kyle's: 4.4 Google Search Console (TXT + sitemap submit), 0.5 Vercel Web Analytics toggle (its script 404s until enabled), optional 4.6 renames.
 **Context:** Kyle bought `gentleway.ink` (judo = 柔道 = "the gentle way") to host the Gokyo no Waza poster as an official Monument Labs product. Today the deployed app (`gokyo-poster.vercel.app`) has a bare Nuxt UI starter head: a `<title>`, one `description` meta, the starter `favicon.ico`, no OG/Twitter tags, no canonical, no JSON-LD, no sitemap/robots, no mark, and no Monument Labs attribution. The 40 throws' real content (mechanic / analogy / why-it-maps prose, ~25k words) only renders inside a modal after a click, so crawlers never see it.
 **Goal:** `https://gentleway.ink` serves the poster with the full Monument Labs product SEO package (matching Camera Shy / cosmo / Clean Markdown), a real mark + favicon set + OG card, per-throw indexable pages, and is listed on monumentlabs.io like the other products.
 **Scope:** Domain + DNS, brand mark + static asset set, head/meta/JSON-LD/sitemap/robots/llms.txt, per-throw routes (`/throws/[id]`), footer attribution, Monument Labs site listing, launch verification, docs sync. No content changes to the 40 analogies, no design restyle beyond the header brand row, footer line, and the new throw page (which reuses the modal's layout).
@@ -148,7 +148,7 @@ No new Nuxt UI screens; the UI delta is a brand row in the header, a footer line
 - [x] **Server HTML** (`.output/public/index.html`, `.output/public/throws/tai-otoshi/index.html`; dumps in `verification/samples/`): canonical absolute (`https://gentleway.ink`, `.../throws/tai-otoshi`), exactly one `meta[name=description]`, one ld+json that `JSON.parse`s (4 nodes + 40 `ListItem`s on `/`; `WebPage` + 2 `ImageObject`s on the throw page), og:image absolute (`/og-image.png`, `/og/tai-otoshi.jpg`), one icon link set (4 links), zero `—` in all 41 pages, throw page contains the `mechanic` text under `<h2>Mechanic</h2>`. All 40 throw descriptions ≤155 chars.
 - [x] `/sitemap.xml` (Nitro preview on :3100): 41 `<url>`/`<loc>`s, no trailing-slash variants, `<image:image>` present: 160 total (80 on `/` from the grid, 2 per throw page), no `<lastmod>`. `/robots.txt`, `/llms.txt`, `/site.webmanifest`, `/og/tai-otoshi.jpg`, `/og-image.png` all 200; `/throws/nope` → 404 (JSON body to a bare curl, the styled HTML error page with `Accept: text/html`, title "Throw not found · Gentle Way", `robots: noindex`). Table in `verification/samples/curl_status.txt`.
 - [x] Browser (Playwright vs `npm run dev`, Chromium 1280 + 390): brand row + footer on `/`; plain click on a card opens the modal (URL stays `/`); modal "Open page →" navigates to `/throws/tai-otoshi`; `/throws/tai-otoshi` desktop + mobile; prev/next wrap (`deashi-harai` prev → `yoko-gake`, `yoko-gake` next → `deashi-harai`); error page styled. Screenshots: `verification/screenshots/sprint2_{index_desktop,index_footer,index_modal,throw_desktop,throw_mobile,error_404}.webp`. Not exercised: cmd-click (modifier clicks are explicitly let through to the browser in `ThrowCard.onClick`; same code path as before for the `<a href>`), mobile tap-flip (Playwright desktop Chromium reports `hover: hover` even at 390px; logic unchanged from before).
-- [ ] Preview deploy: `curl -I https://gokyo-poster.vercel.app/` → 308 to gentleway.ink (or note the fallback); `/throws/tai-otoshi/` → 308 to no-slash. (Needs a push; Sprint 4.)
+- [x] Prod deploy (Sprint 4.1): `curl -I https://gokyo-poster.vercel.app/` → 308 to `https://www.gentleway.ink/`; `/throws/tai-otoshi/` → 308 to no-slash.
 
 #### Deviations (routine calls made during execution)
 - `SITE.description` trimmed to 160 chars (the plan's draft was 168): *"An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click."* **Sprint 1's `site.webmanifest` `description` and `llms.txt` blockquote still carry the 168-char draft; they should be updated to the string above so there is one description.**
@@ -187,14 +187,14 @@ No new Nuxt UI screens; the UI delta is a brand row in the header, a footer line
 
 ---
 
-### Sprint 4: Launch checks, docs sync, verification artifact [In progress: 4.5 + 4.7 done; 4.1–4.4 pending prod deploy/DNS]
+### Sprint 4: Launch checks, docs sync, verification artifact [4.1–4.3, 4.5, 4.7 complete; 4.4 Kyle (GSC)]
 **Goal:** `https://gentleway.ink` is live with a valid cert, passes validators, the docs humans read are current, and the work is recorded.
 **Estimated effort:** 1.5 h (after DNS propagates and Sprint 2 is deployed)
 
 #### Tasks
-- 4.1 DNS/TLS: `dig +short gentleway.ink` / `www`; `vercel domains inspect gentleway.ink` → configured; cert issued; `curl -I https://www.gentleway.ink` → 308 → apex; `curl -I https://gokyo-poster.vercel.app` → 308 → gentleway.ink (or canonical fallback noted).
-- 4.2 Prod crawl: fetch `https://gentleway.ink/sitemap.xml`, extract every `<loc>`, assert 41 × HTTP 200; `robots.txt`, `llms.txt`, `og-image.png`, one `/og/*.jpg` all 200.
-- 4.3 Validators: Google Rich Results Test + Schema.org validator on `/` and `/throws/tai-otoshi` (no errors); LinkedIn Post Inspector / opengraph.xyz render both the house card and a per-throw JPEG; Lighthouse (mobile) on both routes: SEO ≥ 95, Performance/LCP noted for the throw page.
+- 4.1 ✅ DNS/TLS (2026-08-21, prod): cert valid; direction flipped to www-canonical (see "Post-launch fix" below), so `curl -I https://gentleway.ink` → 308 → `https://www.gentleway.ink/`; `curl -I https://gokyo-poster.vercel.app` → 308 → `https://www.gentleway.ink/`; `/throws/tai-otoshi/` → 308 → no slash; `/throws/nope` → 404. Table: `verification/samples/prod_curl_status.txt`.
+- 4.2 ✅ Prod crawl (2026-08-21): `https://www.gentleway.ink/sitemap.xml` → 41 `<loc>`, 41/41 HTTP 200, all on the www host with no trailing slash, 160 `<image:image>`; `robots.txt`, `llms.txt`, `site.webmanifest`, icon set, `og-image.png`, `/og/uchi-mata.jpg` all 200. Server HTML on `/` and `/throws/tai-otoshi`: absolute www canonical, one meta description, JSON-LD parses (`samples/prod_index_ld.json`, `samples/prod_tai-otoshi_ld.json`), og:image absolute, zero em dashes, Mechanic prose in HTML.
+- 4.3 ✅ Validators (2026-08-21): Schema.org 0 errors / 0 warnings on both routes; Google Rich Results Test 0 errors (Carousels + Software Apps on `/`, Image Metadata on the throw page; optional-field notices only); opengraph.xyz renders the house card and the tai-otoshi diptych JPEG; Lighthouse mobile `/` SEO 100 / Performance 79 / LCP 4.4 s, `/throws/tai-otoshi` SEO 100 / Performance 92 / LCP 2.9 s (`samples/prod_lighthouse.txt`; a first `/` run scored SEO 92 on a transient robots.txt fetch failure inside Lighthouse). Screenshots `verification/screenshots/sprint4_*.webp`; prod browser smoke (brand row, footer link, card → modal → page, mobile throw page, prev/next) recorded in `verification/index.html`.
 - 4.4 **Kyle:** GSC — verify the Domain property (TXT from 0.4), submit the sitemap, request indexing on `/` and 2–3 throw pages. Optional Bing import.
 - 4.5 ✅ Docs (concrete, each a file edit) — done 2026-08-21:
   - ✅ Root `README.md` "The site": name Gentle Way, live URL, `/throws/[id]` route, `npm run og`, pointer to this plan; add this folder to the `internal_docs/` bullet under "Current state". `GENERATING.md`: no change needed.
@@ -203,10 +203,10 @@ No new Nuxt UI screens; the UI delta is a brand row in the header, a footer line
   - ✅ `~/.claude/CLAUDE.md` Active projects row: Gentle Way · `gokyo-poster` · interactive judo poster, live at gentleway.ink, Nuxt app in `src/`.
   - ✅ `~/claude-ops/conventions/project_bootstrap.md`: one line naming Gentle Way as the reference for `ItemList` + per-page `WebPage` JSON-LD and the global `https://monumentlabs.io/#org` id; note that fully static content sites may prerender `/` (the doc currently says never to).
 - 4.6 Optional housekeeping (Kyle's call): rename Vercel project `gokyo-poster` → `gentle-way` (updates `.vercel/project.json`); rename the GitHub repo (update `SITE.github`, README, footer). Not required for launch.
-- 4.7 ✅ Phase 5 artifact (written 2026-08-21; Sprint 4 section marked pending prod deploy/DNS, validator screenshots to be appended after 4.1–4.3): `verification/index.html` + `verification/screenshots/*.webp` (OG card, favicon in tab, index brand row + footer, card → modal → page, `/throws/tai-otoshi` desktop/mobile, error page, ML products tile, validator results) + `verification/samples/` (server HTML head dumps, JSON-LD blobs, `sitemap.xml`, curl status table).
+- 4.7 ✅ Phase 5 artifact (written 2026-08-21; Sprint 4 section filled in with the prod results and 9 `sprint4_*` screenshots the same day): `verification/index.html` + `verification/screenshots/*.webp` (OG card, favicon in tab, index brand row + footer, card → modal → page, `/throws/tai-otoshi` desktop/mobile, error page, ML products tile, validator results) + `verification/samples/` (server HTML head dumps, JSON-LD blobs, `sitemap.xml`, curl status table).
 
 #### Verification
-- [ ] 4.1–4.3 pass (pending prod deploy/DNS). Docs in 4.5 edited ✅; artifact written ✅ (all 11 screenshots resolve); plan statuses updated for 4.5/4.7.
+- [x] 4.1–4.3 pass on prod (2026-08-21, `https://www.gentleway.ink`): 41/41 sitemap URLs 200, validators 0 errors, Lighthouse SEO 100/100. Docs in 4.5 edited ✅; artifact written ✅ (all 20 screenshots resolve, headless check); plan statuses updated for 4.1–4.3/4.5/4.7. 4.4 (GSC) is Kyle's.
 
 ---
 
@@ -217,7 +217,7 @@ No new Nuxt UI screens; the UI delta is a brand row in the header, a footer line
 | GoDaddy DNS (A, CNAME) | Yes | Kyle, manual (2FA). Records in 0.3. |
 | GSC DNS TXT | Recommended | Kyle, manual; batch with 0.3. |
 | Vercel Web Analytics toggle | Yes (for `@vercel/analytics`) | Kyle, dashboard (0.5). |
-| Vercel domains | Done | `gentleway.ink` primary, `www` 308 → apex, both verified (2026-08-21). |
+| Vercel domains | Done | `www.gentleway.ink` primary, apex 308 → www, both verified (2026-08-21; flipped from apex-primary after the first deploy, see "Post-launch fix"). |
 | `@nuxtjs/sitemap`, `@vercel/analytics` | Yes | New deps in `src/package.json`. No env vars. |
 | `src/vercel.json` | Yes | `trailingSlash: false` + `.vercel.app` host redirect (2.5). |
 | MonumentLabsSite | Yes (Sprint 3) | Separate repo/commit; clipart generation uses the OpenAI key `assets/clipart/scripts` already reads. |
