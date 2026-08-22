@@ -18,7 +18,13 @@ onMounted(() => {
 
 const showAnalogy = computed(() => !canHover.value && props.flipped)
 
-function onClick() {
+// The card is a real <a href> to /throws/{id} (crawlers, cmd/middle-click,
+// open in new tab get the page). A plain click is intercepted and keeps the
+// hover/flip/modal behavior; modifier clicks fall through to the browser.
+// (A NuxtLink here would SPA-navigate before this handler can prevent it.)
+function onClick(e: MouseEvent) {
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+  e.preventDefault()
   if (canHover.value) {
     emit('open')
   } else if (!props.flipped) {
@@ -30,8 +36,8 @@ function onClick() {
 </script>
 
 <template>
-  <button
-    type="button"
+  <a
+    :href="`/throws/${technique.id}`"
     class="group block w-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-seal/60 rounded-sm"
     :aria-label="`${technique.romaji}: open details`"
     @click="onClick"
@@ -42,7 +48,7 @@ function onClick() {
     >
       <img
         :src="`/img/throws/${technique.id}.webp`"
-        :alt="`${technique.romaji}: the throw`"
+        :alt="`${technique.romaji} (${technique.english}), sumi-e ink drawing of the judo throw`"
         loading="lazy"
         width="640"
         height="640"
@@ -50,7 +56,7 @@ function onClick() {
       >
       <img
         :src="`/img/analogies/${technique.id}.webp`"
-        :alt="technique.analogy_name"
+        :alt="`${technique.analogy_name}: the everyday analogy for ${technique.romaji}`"
         loading="lazy"
         width="640"
         height="640"
@@ -68,5 +74,5 @@ function onClick() {
       <span class="font-display text-sm text-ink">{{ technique.romaji }}</span>
       <span class="font-kanji text-xs text-inkmuted">{{ technique.kanji }}</span>
     </div>
-  </button>
+  </a>
 </template>

@@ -34,7 +34,7 @@ const open = defineModel<boolean>('open', { default: false })
           <figure class="border border-hairline bg-white rounded-sm overflow-hidden">
             <img
               :src="`/img/throws/${technique.id}-lg.webp`"
-              :alt="`${technique.romaji}: the throw`"
+              :alt="`${technique.romaji} (${technique.english}), sumi-e ink drawing of the judo throw`"
               width="1024"
               height="1024"
               class="w-full h-auto"
@@ -46,7 +46,7 @@ const open = defineModel<boolean>('open', { default: false })
           <figure class="border border-hairline bg-white rounded-sm overflow-hidden">
             <img
               :src="`/img/analogies/${technique.id}-lg.webp`"
-              :alt="technique.analogy_name"
+              :alt="`${technique.analogy_name}: the everyday analogy for ${technique.romaji}`"
               width="1024"
               height="1024"
               class="w-full h-auto"
@@ -67,6 +67,13 @@ const open = defineModel<boolean>('open', { default: false })
           <p class="border-l-2 border-seal pl-3 text-sm italic leading-relaxed text-inkmuted">
             {{ technique.why_it_maps }}
           </p>
+        </div>
+
+        <div class="mt-6 border-t border-hairline pt-4 text-xs text-inkmuted">
+          <NuxtLink
+            :to="`/throws/${technique.id}`"
+            class="underline underline-offset-2 hover:text-seal"
+          >Open page →</NuxtLink>
         </div>
       </div>
     </template>

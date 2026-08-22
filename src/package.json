@@ -10,11 +10,14 @@
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
     "data": "node scripts/build-data.mjs",
-    "images": "node scripts/build-images.mjs"
+    "images": "node scripts/build-images.mjs",
+    "og": "node scripts/build-og.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.122",
     "@nuxt/ui": "^4.10.0",
+    "@nuxtjs/sitemap": "^8.5.0",
+    "@vercel/analytics": "^2.0.1",
     "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3"
   },

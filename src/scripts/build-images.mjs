@@ -16,7 +16,10 @@ for (const kind of ['throws', 'analogies']) {
     const id = file.replace(/\.png$/, '')
     for (const [suffix, width] of [['', 640], ['-lg', 1024]]) {
       const out = join(outDir, `${id}${suffix}.webp`)
-      if (existsSync(out)) { skipped++; continue }
+      if (existsSync(out)) {
+        skipped++
+        continue
+      }
       await sharp(join(srcDir, file)).resize(width, width).webp({ quality: 82 }).toFile(out)
       made++
     }
