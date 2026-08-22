@@ -4,7 +4,7 @@
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "gokyo-poster.vercel.app" }],
-      "destination": "https://gentleway.ink/$1",
+      "destination": "https://www.gentleway.ink/$1",
       "permanent": true
     }
   ]

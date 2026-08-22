@@ -8,8 +8,8 @@ Gentle Way is a static site, free to use, with no login and nothing to install. 
 
 ## Pages
 
-- [Home](https://gentleway.ink/): the full poster, forty throws in five groups, ordered as in the 1920 Kodokan Gokyo
-- [Throw pages](https://gentleway.ink/throws/tai-otoshi): one page per throw at /throws/{id}, where id is the romaji slug. Examples: https://gentleway.ink/throws/tai-otoshi, https://gentleway.ink/throws/uchi-mata, https://gentleway.ink/throws/seoi-nage
+- [Home](https://www.gentleway.ink/): the full poster, forty throws in five groups, ordered as in the 1920 Kodokan Gokyo
+- [Throw pages](https://www.gentleway.ink/throws/tai-otoshi): one page per throw at /throws/{id}, where id is the romaji slug. Examples: https://www.gentleway.ink/throws/tai-otoshi, https://www.gentleway.ink/throws/uchi-mata, https://www.gentleway.ink/throws/seoi-nage
 - [Source](https://github.com/GKjohns/gokyo-poster): the GitHub repository for the site and the image pipeline
 
 ## Notes

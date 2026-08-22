@@ -1,6 +1,6 @@
 # Gentle Way
 
-The Nuxt 4 + Nuxt UI app behind [gentleway.ink](https://gentleway.ink): an interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, each drawn in sumi-e ink and paired with an everyday scene that explains the mechanics. `/` is the poster; `/throws/[id]` is one page per throw. Built by [Monument Labs](https://monumentlabs.io).
+The Nuxt 4 + Nuxt UI app behind [gentleway.ink](https://www.gentleway.ink): an interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, each drawn in sumi-e ink and paired with an everyday scene that explains the mechanics. `/` is the poster; `/throws/[id]` is one page per throw. Built by [Monument Labs](https://monumentlabs.io).
 
 Commands (run from this directory, Node 22+):
 

@@ -11,7 +11,7 @@ export const SITE = {
   name: 'Gentle Way',
   // 160 chars. Used for meta, og, JSON-LD; mirrored by hand in site.webmanifest and llms.txt.
   description: 'An interactive poster of the Gokyo no Waza, the forty throws of Kodokan judo, drawn in sumi-e ink and paired with everyday scenes that make the mechanics click.',
-  url: 'https://gentleway.ink',
+  url: 'https://www.gentleway.ink',
   github: 'https://github.com/GKjohns/gokyo-poster',
   launched: '2026-08-22',
   org: {

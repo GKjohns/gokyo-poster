@@ -1,4 +1,4 @@
-# Gentle Way - https://gentleway.ink
+# Gentle Way - https://www.gentleway.ink
 # Everything is crawlable. AI crawlers are welcome (named explicitly so the
 # intent is unambiguous).
 
@@ -33,4 +33,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://gentleway.ink/sitemap.xml
+Sitemap: https://www.gentleway.ink/sitemap.xml

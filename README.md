@@ -19,7 +19,7 @@ The canonical example: **Tai Otoshi** feels like having a rock tied around your 
 
 ## The site
 
-`src/` is the poster itself, shipped as **Gentle Way** at [gentleway.ink](https://gentleway.ink)
+`src/` is the poster itself, shipped as **Gentle Way** at [gentleway.ink](https://www.gentleway.ink)
 (a Monument Labs product). It is a Nuxt 4 + Nuxt UI app (started from the official
 `nuxt-ui-templates/starter`): paper-white gallery page, five kyo sections, 40 cards.
 Hover a card and the throw crossfades into its analogy; click for the pair

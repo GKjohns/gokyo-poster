@@ -228,6 +228,9 @@ No Supabase, no env vars, no secrets in this project.
 
 The poster is live at `gokyo-poster.vercel.app` with no users, DB, or auth. Prod-impacting surfaces: (a) the domain cutover — Vercel attaches the new domain while the `.vercel.app` alias keeps working, and the host redirect in 2.5 only fires once `gentleway.ink` resolves (verify on a preview deploy first; if the redirect misbehaves, remove it and rely on canonical); (b) the switch to prerendering — verified locally by `npm run build` before push; unknown routes still hit the server function. Sprint 2 ships as one push so the `ItemList` never points at 404s. MonumentLabsSite edits are additive one-array-entry changes following two precedent commits.
 
+## Post-launch fix: www-canonical (2026-08-21)
+Kyle flagged that the redirect direction was backwards vs the fleet: every live Monument Labs product (Camera Shy, Daylight, Monument Labs, Clean Markdown, Margin, Call Compass, Riff) is **www-canonical** (apex 307/308 → www). Fixed: Vercel `www.gentleway.ink` is now primary and `gentleway.ink` 308s to it (REST PATCH); `SITE.url`, `vercel.json` destination, `robots.txt`, `llms.txt`, READMEs and `STATE.md` switched to `https://www.gentleway.ink`; canonical/og:url/sitemap/JSON-LD follow from `SITE.url`. MonumentLabsSite entries keep the bare apex URL like the other products (the redirect handles it). Verification samples captured before the flip still show the apex host.
+
 ## Considered and rejected
 - `routeRules '/**': { prerender: true }` — Nitro ignores wildcard prerender rules for enumeration; `prerender.routes + crawlLinks` does the work.
 - `BreadcrumbList` with group-fragment crumbs; `Product @id` shared with the `WebApplication`; `ogType: 'article'` on throw pages — no benefit, some semantic mess.
